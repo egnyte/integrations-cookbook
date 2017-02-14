@@ -6,8 +6,8 @@ Hi, welcome to our cook book, the best place to start when preparing to build an
 
 ## Table of contents
 
-||`time to cook`|
-| --- |
+|  | `time to cook` |
+| --- | --- |
 |**Basic recipes**|
 |[Authentication](TBD.md)|
 |[UI Integration Invocation](TBD.md)|

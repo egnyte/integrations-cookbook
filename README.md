@@ -2,7 +2,7 @@
 
 Hi, welcome to our cook book, the best place to start when preparing to build an integration.
 
-#### Want to check which recipes may apply to you? [Take the test!](TBD.md)
+#### Want to check which recipes may apply to you? [Take the test!](test.md)
 
 ## Table of contents
 

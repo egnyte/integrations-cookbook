@@ -41,4 +41,4 @@ Instead, We recommend you write a thin abstraction layer on top of Storage API s
   - Use JS SDK Filepicker to get user's choice of file id
   - Implement your own file chooser
   - Use a single (user-defined) path for all files and use convention for file and folder names - eg. based on project names or discussion titles in your product.
-5. Bake your integration and send it for certification.
+1. Bake your integration and send it for certification.

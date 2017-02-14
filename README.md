@@ -14,7 +14,7 @@ Hi, welcome to our cook book, the best place to start when preparing to build an
 |**API based integrations**|
 |[User provisioning](TBD.md)|I|
 |**Egnyte in your UIs**|
-|[External Storage Provider](storage-provider.md)|II|
+|[External Storage Provider](external-storage.md)|II|
 |[Share a link to file](TBD.md)|I|
 |**Integrations with Egnyte UIs**|
 |[Quick context menu action](TBD.md)|I|

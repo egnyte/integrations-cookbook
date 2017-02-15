@@ -30,9 +30,9 @@ Customers appreciate these integrations because they help them use multiple tool
 
 Make sure you plan your integration in a way that always uses Storage API for reading the files and writing back. You can introduce a temporary cache and delay sending the changed file, sure, but make sure you **don't try to implement synchronization** between your service's permanent cloud storage and Egnyte.
 
-It always turns out to be much more complicated than initially estimated. And some customers won't be able to use your integration if their data governance policy is strict.
+It always turns out to be much more complicated than initially estimated. And some customers won't be able to use your integration if their company's data governance policy is strict.
 
-Instead, We recommend you write a thin abstraction layer on top of Storage API so that it's compatible with your current storage handling code and so can be put in place of any other storage your product is using.
+Instead, we recommend you write a thin abstraction layer on top of Storage API so that it's compatible with your current storage handling code. Then it can be put in place of any other storage your product is using.
 
 1. Implement Auth - use the Enhanced Auth Service to receive OAuth2 code and exchange it for a token.
 1. Decide if you want to use one "Admin" token for all interactions or let every user get authenticated separately. We suggest you do your best to choose the latter - API request limits are per-user.

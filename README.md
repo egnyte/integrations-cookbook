@@ -9,7 +9,7 @@ Hi, welcome to our cook book, the best place to start when preparing to build an
 |  | `time to cook` |
 | --- | --- |
 |**Basic recipes**|
-|[Authentication](TBD.md)|
+|[Authentication](auth.md)|
 |[UI Integration Invocation](TBD.md)|
 |**API based integrations**|
 |[User provisioning](TBD.md)|I|

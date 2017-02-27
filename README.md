@@ -17,7 +17,7 @@ Hi, welcome to our cook book, the best place to start when preparing to build an
 |[External Storage Provider](external-storage.md)|II|
 |[Share a link to file](share-link.md)|I|
 |**Integrations with Egnyte UIs**|
-|[Quick context menu action](TBD.md)|I|
+|[Quick context menu action](context-menu.md)|I|
 |[Editor for certain file types](TBD.md)|I|
 |[Elaborate context menu action](TBD.md)|II|
 |**Mixed type integrations**|

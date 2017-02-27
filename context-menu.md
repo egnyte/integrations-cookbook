@@ -4,7 +4,7 @@
 
 Your product can be instantly accessible to Egnyte customers through a UI intergation, which puts your options in the context menu for files and folders.
 
-![Screenshot of a context menu](assets/context-menu.png)
+![Screenshot of a context menu](./assets/context-menu.png)
 
 This is how some of our existing partners provide preview and manipulation functionality for specific file types.
 

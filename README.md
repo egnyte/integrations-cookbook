@@ -15,7 +15,7 @@ Hi, welcome to our cook book, the best place to start when preparing to build an
 |[User provisioning](TBD.md)|I|
 |**Egnyte in your UIs**|
 |[External Storage Provider](external-storage.md)|II|
-|[Share a link to file](TBD.md)|I|
+|[Share a link to file](share-link.md)|I|
 |**Integrations with Egnyte UIs**|
 |[Quick context menu action](TBD.md)|I|
 |[Editor for certain file types](TBD.md)|I|

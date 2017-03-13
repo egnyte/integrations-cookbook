@@ -10,7 +10,8 @@ Hi, welcome to our cook book, the best place to start when preparing to build an
 | --- | --- |
 |**Basic recipes**|
 |[Authentication](auth.md)|
-|[UI Integration Invocation](TBD.md)|
+|[UI Integration Invocation](ui-framework.md)|
+|[App Settings screen for users](app-settings.md)|
 |**API based integrations**|
 |[User provisioning](TBD.md)|I|
 |**Egnyte in your UIs**|
@@ -18,7 +19,7 @@ Hi, welcome to our cook book, the best place to start when preparing to build an
 |[Share a link to file](share-link.md)|I|
 |**Integrations with Egnyte UIs**|
 |[Quick context menu action](context-menu.md)|I|
-|[Editor for certain file types](TBD.md)|I|
+|[Editor for certain file types](editor.md)|I|
 |[Elaborate context menu action](TBD.md)|II|
 |**Mixed type integrations**|
 |[Same actions in your UI and Egnyte UI](TBD.md)|III|

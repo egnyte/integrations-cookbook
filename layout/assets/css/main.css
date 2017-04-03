@@ -1,0 +1,30 @@
+.egnyte-branding{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background: #333 url('./egnyte-developers-logo4.png') no-repeat left;
+    padding-left: 350px
+}
+
+.egnyte-branding a {
+    color: #aaa;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 22px;
+    border-bottom: 1px solid #aaa
+}
+.egnyte-branding .nav {
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+body {
+    padding-top: 80px;
+}
+
+#table-of-contents+table * {
+    border: none;
+    background:none;
+}

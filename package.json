@@ -1,0 +1,17 @@
+{
+  "name": "integrations-cookbook",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm run build",
+    "build": "rimraf ./html/* && generate-md --layout ./layout --input ./book --output ./html && ncp ./html/README.html ./html/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.egnyte-internal.com:integrations/integrations-cookbook.git"
+  },
+  "dependencies": {
+    "markdown-styles": "^3.1.9",
+    "ncp": "^2.0.0",
+    "rimraf": "^2.6.1"
+  }
+}

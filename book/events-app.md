@@ -40,6 +40,10 @@ It always turns out to be much more complicated than initially estimated. And so
 1. Implement resetting your recent event id when you get a 404 for it (see below)
 1. Bake your integration and send it for certification.
 
+### Event types
+
+Events API returns events from file system only. You can detect file and folder operations and adding comments to files, but you won't detect users or settings modifications.
+
 ### Resetting last event id (cursor)
 
 If you're polling the events API based on last known event id, effectively saying "give me all events that happened after `id`" it's possible that there were 300K events outside of the folder you're watching while you didn't get a single one, or there may not be an event in your watched folder for a month. In that case, the request will start failing as soon as the event with your saved `id` doesn't exist anymore.

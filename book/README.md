@@ -15,8 +15,9 @@ The purpose of short recipes is to limit the scope of documentation you read to 
 |[Authentication](auth.md)|
 |[UI Integration Invocation](ui-framework.md)|
 |[App Settings screen for users](app-settings.md)|
+|[Requests throttling / QPS](throttling.md)|
 |**API based integrations**|
-|[User provisioning](TBD.md)|I|
+|[User provisioning](user-provisioning.md)|I|
 |[Reactive integration with Events API](events-app.md)|II|
 |**Egnyte in your UIs**|
 |[External Storage Provider](external-storage.md)|II|

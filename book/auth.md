@@ -26,3 +26,12 @@ After getting the domain, *Enhanced Auth Service* will get the Auth Code step do
 Use it just like you would use the first step of OAuth2 Code flow.
 
 We provide two URLs for the service to let you redirect users to the closest location, but in fact only one request is made to that server, so if you don't have means to figure out if the user should start in US or Europe, just pick one.
+
+## Getting current user
+
+It's sometimes too easy to miss it, so it deserves a direct link here.
+
+This is how you get the current user based on an access token in the request:
+[Getting User Info](https://developers.egnyte.com/docs/read/Public_API_Authentication#Getting-User-Info)
+
+For more details about the user, if necessary, you can request Users API by id.

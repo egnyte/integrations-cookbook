@@ -15,7 +15,7 @@ Customers appreciate these integrations because they help them use multiple tool
 ## Ingredients
 
 - Two tablespoons of understanding: [Egnyte-specific terms](definitions.md)
-- [Authentication](auth.mds)
+- [Authentication](auth.md)
 - [Public API for file system](https://developers.egnyte.com/docs/read/File_System_Management_API_Documentation)
   - get folder info
   - get file metadata

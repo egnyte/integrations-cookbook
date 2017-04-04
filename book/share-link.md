@@ -15,7 +15,7 @@ Customers appreciate these integrations because they don't have to leave your ap
 ## Ingredients
 
 - Two tablespoons of understanding: [Egnyte-specific terms](definitions.md)
-- [Authentication](auth.mds)
+- [Authentication](auth.md)
 - [Public API File System](https://developers.egnyte.com/docs/read/File_System_Management_API_Documentation#List-File-or-Folder)
   - list folder
 - [Public API Links](https://developers.egnyte.com/docs/read/Egnyte_Link_API_Documentation)

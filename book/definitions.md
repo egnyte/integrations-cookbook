@@ -23,4 +23,4 @@ A file in Egnyte Connect can have versions. Every time you update the file, grou
 
 Permissions are set on a folder level and all files inside the folder are accessible with the same permissions.
 
-Permissions only work in /Shared not in /Private
+Permissions only work in /Shared, **not** in /Private

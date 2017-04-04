@@ -3,7 +3,7 @@
 
 Your integration will be featured in our *Egnyte Builder*, also known as *Apps & Add-Ons*, where it can provide an option to open a user settings screen.
 
-![screenshot]()
+![Screenshot of settings](./assets/settings-menu.png)
 
 All you need to do to have that option is to provide `userSettings` field in your App Definition ([what's an App Definition?](./ui-framework.md))
 

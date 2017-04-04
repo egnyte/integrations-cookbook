@@ -2,6 +2,9 @@
 
 Hi, welcome to our cook book, the best place to start when preparing to build an integration.
 
+This book is intentionally kept short and full of external links.
+The purpose of short recipes is to limit the scope of documentation you read to get your project off the ground.
+
 #### Want to check which recipes may apply to you? [Take the test!](test.md)
 
 ## Table of contents
@@ -14,13 +17,14 @@ Hi, welcome to our cook book, the best place to start when preparing to build an
 |[App Settings screen for users](app-settings.md)|
 |**API based integrations**|
 |[User provisioning](TBD.md)|I|
+|[Reactive integration with Events API](events-app.md)|II|
 |**Egnyte in your UIs**|
 |[External Storage Provider](external-storage.md)|II|
 |[Share a link to file](share-link.md)|I|
 |**Integrations with Egnyte UIs**|
 |[Quick context menu action](context-menu.md)|I|
 |[Editor for certain file types](editor.md)|I|
-|[Elaborate context menu action](TBD.md)|II|
+|[Elaborate context menu action](elaborate-uint.md)|II|
 |**Mixed type integrations**|
 |[Same actions in your UI and Egnyte UI](TBD.md)|III|
 

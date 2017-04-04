@@ -1,10 +1,26 @@
+body {
+    background: #419998 url('./gears-inner-page.png') no-repeat right 60px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+}
+
+.wrapper {
+    background: #f8f8f8;
+    margin: 0;
+    padding: 80px 40px 10px 10px;
+    width: 800px;
+    border-left: 20px solid #fff;
+}
+
 .egnyte-branding {
     position: fixed;
     top: 0;
     left: 0;
     height: 60px;
     width: 100%;
-    background: #333 url('./egnyte-developers-logo4.png') no-repeat left;
+    background: #333 url('./egnyte-developers-logo4.png') no-repeat 10px top;
     padding-left: 350px;
     z-index:2;
 }
@@ -13,7 +29,7 @@
     color: #aaa;
     font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
     text-decoration: none;
-    margin-left: 15px; 
+    margin-left: 15px;
 }
 
 .nav {
@@ -21,13 +37,24 @@
     vertical-align: middle;
 }
 
-body {
-    padding-top: 80px;
-}
 
 #table-of-contents+table * {
     border: none;
     background: none;
+}
+#table-of-contents+table {
+    font-size: 1.2em;
+    margin: 0 0 60px 50px;
+}
+#table-of-contents+table strong {
+    display: block;
+    background-color: #fff;
+    padding: 0 10px;
+    margin-left: -10px;
+
+}
+#table-of-contents+table a {
+    margin: 0 20px
 }
 
 .markdown-body img {

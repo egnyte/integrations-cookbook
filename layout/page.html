@@ -9,12 +9,21 @@
     <link type="text/css" rel="stylesheet" href="{{asset 'css/hljs-github.min.css'}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset 'css/main.css'}}"/>
   </head>
-  <body>
+  <body data-title="{{title}}">
     <div class="egnyte-branding">
-        <div class="nav"><a href="index.html">Integrations Cook Book</a></div>
+        <div class="nav">
+
+        </div>
+    </div>
+    <div class="nav">
+        <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
     </div>
     <article class="markdown-body">
       {{~> content}}
     </article>
+    <div class="nav">
+        <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+        <a href="#top"> &#11192; Back to top</a>
+    </div>
   </body>
 </html>

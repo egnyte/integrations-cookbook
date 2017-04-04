@@ -1,4 +1,4 @@
-# Editor
+# Editor available from Egnyte Connect UI
 
 ## Introduction
 

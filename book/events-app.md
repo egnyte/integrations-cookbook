@@ -1,4 +1,4 @@
-# External Storage Provider
+# Reactive integration with Events API
 
 ## Introduction
 

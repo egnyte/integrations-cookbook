@@ -11,6 +11,9 @@ The purpose of short recipes is to limit the scope of documentation you read to 
 
 |  | `time to cook` |
 | --- | --- |
+|**Introduction**|
+|[Getting Started](getting-started.md)|
+|[Certification](certification.md)|
 |**Basic recipes**|
 |[Authentication](auth.md)|
 |[UI Integration Invocation](ui-framework.md)|
@@ -26,8 +29,7 @@ The purpose of short recipes is to limit the scope of documentation you read to 
 |[Quick context menu action](context-menu.md)|I|
 |[Editor for certain file types](editor.md)|I|
 |[Elaborate context menu action](elaborate-uint.md)|II|
-|**Mixed type integrations**|
-|[Same actions in your UI and Egnyte UI](TBD.md)|III|
+
 
 ## How does it work?
 

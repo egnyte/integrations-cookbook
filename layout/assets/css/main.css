@@ -74,6 +74,10 @@ h1, h2, h3, h4, h5, h6 {
     clear: both;
 }
 
+.markdown-body h1 {
+    border-bottom-color: #faa;
+}
+
 body[data-title~="Cook"] .back-to-main {
     display:none;
 }

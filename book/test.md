@@ -1,8 +1,9 @@
 # Taste test
 
-This test will help you find out which recipes are interesting in your case.
+This test will help you find out which recipes you should read first.
 
-There are no incorrect answers.
+*Click an answer to toggle it on/off*
+
 
 - Does your integration include any Graphical User Interface?
   - No
@@ -53,7 +54,7 @@ There are no incorrect answers.
         - Try a mix of recipes from both categories. Table of contents should be helpful in this case :)
       - None of the above
         - I'm building something different
-          - That's surprising... [Get in touch!](contact.md)
+        - That's surprising... [Get in touch!](contact.md)
 
 
 If you're not satisfied with the test results, don't hesitate to [send us](contact.md) a few sentences about your integration idea and we'll tell you which recipe to choose or write a new one!

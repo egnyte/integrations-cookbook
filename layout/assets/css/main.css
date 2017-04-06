@@ -81,3 +81,32 @@ h1, h2, h3, h4, h5, h6 {
 body[data-title~="Cook"] .back-to-main {
     display:none;
 }
+
+/* scripting content generated from markdown is hard, but doable... */
+[data-title="Taste test"] article>ul {
+    border-left: 10px solid #ddd;
+    padding: 15px;
+}
+[data-title="Taste test"] ul>li>ul>li>ul {
+    display:none;
+}
+[data-title="Taste test"] li {
+    list-style-type:circle;
+}
+
+[data-title="Taste test"] ul>li, li.selected-option>ul>li>ul>li {
+    cursor: pointer;
+}
+
+li.selected-option {
+    list-style-type:disc;
+}
+
+[data-title="Taste test"] article>ul>li, li.selected-option>ul>li {
+    cursor: default;
+    list-style-type: none;
+}
+
+li.selected-option>ul, li.selected-option>ul>li>ul {
+    display:block !important;
+}

@@ -9,8 +9,8 @@ The purpose of short recipes is to limit the scope of documentation you read to 
 
 ## Table of contents
 
-|  | `time to cook` |
-| --- | --- |
+|  |
+| --- |
 |**Introduction**|
 |[Getting Started](getting-started.md)|
 |[Certification](certification.md)|
@@ -20,15 +20,15 @@ The purpose of short recipes is to limit the scope of documentation you read to 
 |[App Settings screen for users](app-settings.md)|
 |[Requests throttling / QPS](throttling.md)|
 |**API based integrations**|
-|[User provisioning](user-provisioning.md)|I|
-|[Reactive integration with Events API](events-app.md)|II|
+|[User provisioning](user-provisioning.md)|
+|[Reactive integration with Events API](events-app.md)|
 |**Egnyte in your UIs**|
-|[External Storage Provider](external-storage.md)|II|
-|[Share a link to file](share-link.md)|I|
+|[External Storage Provider](external-storage.md)|
+|[Share a link to file](share-link.md)|
 |**Integrations with Egnyte UIs**|
-|[Quick context menu action](context-menu.md)|I|
-|[Editor for certain file types](editor.md)|I|
-|[Elaborate context menu action](elaborate-uint.md)|II|
+|[Quick context menu action](context-menu.md)|
+|[Editor for certain file types](editor.md)|
+|[Elaborate context menu action](elaborate-uint.md)|
 
 
 ## How does it work?

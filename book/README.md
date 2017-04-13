@@ -1,6 +1,8 @@
 # Egnyte Integrations Cook Book
 
-Hi, welcome to our cook book, the best place to start when preparing to build an integration.
+Hi,
+
+welcome to our cook book, the best place to start when preparing to build an integration.
 
 This book is intentionally kept short and full of external links.
 The purpose of short recipes is to limit the scope of documentation you read to get your project off the ground.

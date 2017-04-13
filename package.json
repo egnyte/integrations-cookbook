@@ -4,7 +4,7 @@
   "scripts": {
     "start": "npm run build",
     "build": "rimraf ./html/* && generate-md --layout ./layout --input ./book --output ./html && ncp ./html/README.html ./html/index.html",
-    "dist": "npm run build && gh-pages --dist ./html "
+    "dist": "npm run build && gh-pages --message 'automated render to html' --dist ./html && echo 'OK, now push gh-pages branch to github'"
   },
   "repository": {
     "type": "git",
@@ -13,9 +13,7 @@
   "dependencies": {
     "markdown-styles": "^3.1.9",
     "ncp": "^2.0.0",
-    "rimraf": "^2.6.1"
-  },
-  "devDependencies": {
+    "rimraf": "^2.6.1",
     "gh-pages": "^0.12.0"
   }
 }

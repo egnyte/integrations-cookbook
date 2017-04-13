@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>App Settings</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body data-title="App Settings">
+    <div class="wrapper">
+        <div class="egnyte-branding">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+        </div>
+        <article class="markdown-body"><h1 id="app-settings"><a class="header-link" href="#app-settings"></a>App Settings</h1>
+<p>Your integration will be featured in our <em>Egnyte Builder</em>, also known as <em>Apps &amp; Add-Ons</em>, where it can provide an option to open a user settings screen.</p>
+<p class="img-container"><img src="./assets/settings-menu.png" alt="Screenshot of settings"></p>
+<p>All you need to do to have that option is to provide <code>userSettings</code> field in your App Definition (<a href="./ui-framework.html">what&#39;s an App Definition?</a>)</p>
+<p>The field needs to contain a <code>https://</code> url to your app&#39;s settings screen.</p>
+<h2 id="ui-integration"><a class="header-link" href="#ui-integration"></a>UI Integration</h2>
+<p><strong>If you&#39;re building a <a href="./ui-framework.html">UI integration</a></strong> you can leverage Egnyte to store your settings per user and get them back with every invocation.</p>
+<p>Settings are stored encrypted in our database, in case you wondered if you can keep access tokens to your app there.</p>
+<p>Detailed documentation of settings is available along with invocation flow docs <a href="https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_flow.md#ui-integration-framework-user-settings-flow">UI Integration Framework user settings</a></p>
+        </article>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+            <a href="#top"> &#11192; Back to top</a>
+        </div>
+    </div>
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

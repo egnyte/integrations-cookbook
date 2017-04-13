@@ -1,0 +1,112 @@
+body {
+    background: #419998 url('./gears-inner-page.png') no-repeat right 60px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+}
+
+.wrapper {
+    background: #f8f8f8;
+    margin: 0;
+    padding: 80px 40px 10px 10px;
+    width: 800px;
+    border-left: 20px solid #fff;
+}
+
+.egnyte-branding {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background: #333 url('./egnyte-developers-logo4.png') no-repeat 10px top;
+    padding-left: 350px;
+    z-index:2;
+}
+
+.nav a {
+    color: #aaa;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.nav {
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+
+#table-of-contents+table * {
+    border: none;
+    background: none;
+}
+#table-of-contents+table {
+    font-size: 1.2em;
+    margin: 0 0 60px 50px;
+}
+#table-of-contents+table strong {
+    display: block;
+    background-color: #fff;
+    padding: 0 10px;
+    margin-left: -10px;
+
+}
+#table-of-contents+table a {
+    margin: 0 20px
+}
+
+.markdown-body img {
+    float: left;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin: 0 10px 10px;
+}
+
+article {
+    margin-bottom: 30px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+}
+
+.markdown-body h1 {
+    border-bottom-color: #faa;
+}
+
+body[data-title~="Cook"] .back-to-main {
+    display:none;
+}
+
+/* scripting content generated from markdown is hard, but doable... */
+[data-title="Taste test"] article>ul {
+    border-left: 10px solid #ddd;
+    padding: 15px;
+}
+[data-title="Taste test"] ul>li>ul>li>ul {
+    display:none;
+}
+[data-title="Taste test"] li {
+    list-style-type:circle;
+}
+
+[data-title="Taste test"] ul>li, li.selected-option>ul>li>ul>li {
+    cursor: pointer;
+}
+
+li.selected-option {
+    list-style-type:disc;
+}
+
+[data-title="Taste test"] article>ul>li, li.selected-option>ul>li {
+    cursor: default;
+    list-style-type: none;
+}
+
+li.selected-option>ul, li.selected-option>ul>li>ul {
+    display:block !important;
+}

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Elaborate options in Egnyte Connect UI</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body data-title="Elaborate options in Egnyte Connect UI">
+    <div class="wrapper">
+        <div class="egnyte-branding">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+        </div>
+        <article class="markdown-body"><h1 id="elaborate-options-in-egnyte-connect-ui"><a class="header-link" href="#elaborate-options-in-egnyte-connect-ui"></a>Elaborate options in Egnyte Connect UI</h1>
+<h2 id="introduction"><a class="header-link" href="#introduction"></a>Introduction</h2>
+<p>This is an extension of <a href="./context-menu.html">Context menu option</a> but you don&#39;t have to read it first, all relevant content is duplicated here.</p>
+<p>Your product can be instantly accessible to Egnyte customers through a UI intergation, but there&#39;s more to it than just the context menu.</p>
+<p class="img-container"><img src="./assets/more-menu.png" alt="Screenshot of a more menu"></p>
+<p class="img-container"><img src="./assets/settings-menu.png" alt="Screenshot of settings"></p>
+<p class="img-container"><img src="./assets/context-menu.png" alt="Screenshot of a context menu"></p>
+<h3 id="use-this-recipe-if-you:"><a class="header-link" href="#use-this-recipe-if-you:"></a>Use this recipe if you:</h3>
+<ul class="list">
+<li>want have your functionality available in Egnyte UI context menus.</li>
+<li>want to handle various interactions with your product through Egnyte UIs</li>
+<li>want to show screens and interact with the user who chose to use your option</li>
+</ul>
+<h2 id="ingredients"><a class="header-link" href="#ingredients"></a>Ingredients</h2>
+<ul class="list">
+<li>Two tablespoons of understanding: <a href="./definitions.html">Egnyte-specific terms</a></li>
+<li><a href="./ui-framework.html">UI Integration Framework</a><ul class="list">
+<li>context_menu</li>
+<li>more_menu</li>
+<li>new_menu (available soon)</li>
+<li>user settings</li>
+</ul>
+</li>
+<li>Development environment with access to App Definition form (ask your partner account manager)</li>
+<li>App Definition for your app</li>
+<li><a href="https://developers.egnyte.com/docs/read/File_System_Management_API_Documentation">Public API for file system</a></li>
+</ul>
+<h2 id="steps"><a class="header-link" href="#steps"></a>Steps</h2>
+<p>As you see, there&#39;s no Auth mentioned in ingredients. That&#39;s because Egnyte is going to send API access tokens in invocations.</p>
+<p>It&#39;s important for UI Integrations to keep this token a secret (not expose it to the browser by passing it in URLs, cookies or localStorage).</p>
+<ol class="list">
+<li>Go to your development sandbox domain, open <em>Apps &amp; Add-Ons</em>, click to &quot;Manage my app definition&quot; and switch type to Egnyte UI Integration</li>
+<li>Fill it in according to App Definition docs. Focus on configuring endpoint URLs you want to implement. You need to provide the <code>integrations</code> field as JSON.</li>
+<li>Use multiple entrypoints for different kinds of features. See below for details</li>
+<li>Go back to <em>Apps &amp; Add-Ons</em>, find your app on the listing and <strong>enable</strong>, then switch from admin mode to user mode and <strong>add</strong> it for your current user.</li>
+<li>Read about UI Invocation and implement first two steps - the POST endpoint and the <code>browserFacingUrl</code> handler</li>
+<li>Run it form context menu of your sandbox domain for testing.</li>
+<li>If you don&#39;t have reasons to do otherwise, follow the <a href="https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_flow.md#suggested-steps-to-ensure-invocation-is-securely-handled">Suggested steps to ensure invocation is securely handled</a> to pin the invocation input to user session as step 3. <strong>Important: make sure the url you send back to Egnyte can&#39;t be used by someone else</strong>. If you don&#39;t want to use the suggested steps or you&#39;re having trouble following the diagram, <a href="./contact.html">get in touch</a></li>
+<li>Add <code>userSettings</code> screen if needed. See <a href="./app-settings.html">User Settings</a></li>
+<li>Build your functionality using the token passed in invocation to fetch files and save changes.</li>
+<li>Bake your integration and send it for certification.</li>
+</ol>
+<h3 id="recommended-use-of-entrypoints"><a class="header-link" href="#recommended-use-of-entrypoints"></a>Recommended use of entrypoints</h3>
+<p>You can configure multiple functionalities on the same entrypoint. They can vary based on user privileges, file types, folder locations and more.</p>
+<p>Sometimes it&#39;s worth to configure multiple entries to the same functionality just for the chance to specify a different caption, eg. depending on user privileges &quot;Edit in X&quot; or &quot;Preview in X&quot;</p>
+<p><em>A good example of multiple entrypoints in use is the DocuSign integration, which uses context menu for sending file for signature, more menu for listing pending signatures and new menu (once available, currently more menu) to start a signing process with a pre-defined template that will then be saved to current folder.</em></p>
+<h4 id="context_menu"><a class="header-link" href="#context_menu"></a>context_menu</h4>
+<p>Use it to add your functionalities in a way that allows handling files and folders, also when multiple are selected. All operations on existing files will go to context_menu</p>
+<h4 id="more_menu"><a class="header-link" href="#more_menu"></a>more_menu</h4>
+<p>Use it to add functionality to current folder or expose features that do not belong elsewhere (like summaries of jobs currently being handled by your integration that context menu option starts)</p>
+<h4 id="new_menu-(available-soon)"><a class="header-link" href="#new_menu-(available-soon)"></a>new_menu (available soon)</h4>
+<p>Works the same as more_menu - invokes your integration with a reference to current folder. It&#39;s much easier for the user to discover. Before it&#39;s available, you can use &quot;more_menu&quot; and switch later with no changes to your codebase.</p>
+<p>Implementing &quot;New&quot; option you can:</p>
+<ul class="list">
+<li>ask the user for a filename and check if a file with the same name already exist</li>
+<li>generate multiple files or folders (think project structure from template) based on user input</li>
+<li>pre-populate the file of a certain type with correct content for an empty file, eg. docx format.</li>
+</ul>
+        </article>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+            <a href="#top"> &#11192; Back to top</a>
+        </div>
+    </div>
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

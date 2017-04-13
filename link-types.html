@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Link types</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body data-title="Link types">
+    <div class="wrapper">
+        <div class="egnyte-branding">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+        </div>
+        <article class="markdown-body"><h1 id="link-types"><a class="header-link" href="#link-types"></a>Link types</h1>
+<p>Egnyte has a well established sharing functionality with various configurable parameters.</p>
+<p>The basic distinction is between <a href="#public-links">Public Links</a> and <a href="#deep-links">Deep Links</a></p>
+<h2 id="public-links"><a class="header-link" href="#public-links"></a>Public links</h2>
+<p>Public Linkns can:</p>
+<ul class="list">
+<li>allow not logged in users access to a file or folder</li>
+<li>be protected by a password</li>
+<li>expire after a pre-defined time</li>
+<li>expire after a pre-defined number of uses (aka clicks)</li>
+<li>allow a logged-in user access to file in a folder that&#39;s not shared with them</li>
+<li>be managed/removed at any time</li>
+</ul>
+<p>Links can be created from Public API:
+<a href="https://developers.egnyte.com/docs/read/Egnyte_Link_API_Documentation#Create-a-Link">Public API Links</a></p>
+<p>For more details on links see <a href="https://helpdesk.egnyte.com/hc/en-us/articles/201637104-Sharing-Files-in-Egnyte#filelink">user guides on public links</a></p>
+<h3 id="link-settings"><a class="header-link" href="#link-settings"></a>Link settings</h3>
+<p>Admins can restrict or outright disable public links. An attempt to create a link from public API will fail with an error if it&#39;s against the policy.</p>
+<p>There&#39;s an endpoint in Public API that returns link settings. It&#39;s not documented officially yet, but is not experimental anymore and should not change.</p>
+<pre class="hljs"><code>GET <span class="hljs-regexp">/pubapi/</span>v1<span class="hljs-regexp">/links/</span>settings</code></pre><p>returns</p>
+<pre class="hljs"><code>{
+    <span class="hljs-string">"expiration"</span>: { //expiration setting by admin
+        <span class="hljs-string">"default"</span>: null, //object defining a number and unit (<span class="hljs-name">days</span>, weeks, months)
+        <span class="hljs-string">"max_allowed"</span>: null,
+        <span class="hljs-string">"upload_links"</span>: <span class="hljs-literal">true</span> //upload links allowed (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> relevant to APIs)
+    },
+    <span class="hljs-string">"file_links"</span>: { //types of file link access allowed
+        <span class="hljs-string">"anyone"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"password"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"domain"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"recipients"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"default_type"</span>: <span class="hljs-string">"anyone"</span>
+    },
+    <span class="hljs-string">"folder_links"</span>: { //types of file link access allowed
+        <span class="hljs-string">"anyone"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"password"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"domain"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"recipients"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"default_type"</span>: <span class="hljs-string">"anyone"</span>
+    }
+}</code></pre><p>If <code>file_links</code> is not present, all public links are disabled</p>
+<p><code>expiration.default.unit</code> of months actually means 30 day periods. It&#39;s not requiring you to count real months in the future.</p>
+<p>Here&#39;s an example function that fetches link settings in JavaScript: <a href="https://github.com/egnyte/for-integrators/blob/master/examples/javascript/link-settings.js">for-integrators/link-settings.js</a></p>
+<h2 id="deep-links"><a class="header-link" href="#deep-links"></a>Deep links</h2>
+<p>Deep links provide a reference back to a file or folder in the Web UI. The user has to be logged in and already have permissions to access the folder. If you need fine grained control, please use Public Links.</p>
+<p>Creating a Deep Link:</p>
+<ol class="list">
+<li>Find out what the Egnyte domain and <code>group_id</code> is.</li>
+<li>Just concatenate strings: `<a href="https://{domain">https://{domain</a> name}.egnyte.com/navigate/file/{group_id}``</li>
+</ol>
+        </article>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+            <a href="#top"> &#11192; Back to top</a>
+        </div>
+    </div>
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

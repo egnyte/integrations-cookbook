@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Egnyte-specific terms</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body data-title="Egnyte-specific terms">
+    <div class="wrapper">
+        <div class="egnyte-branding">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+        </div>
+        <article class="markdown-body"><h1 id="egnyte-specific-terms"><a class="header-link" href="#egnyte-specific-terms"></a>Egnyte-specific terms</h1>
+<p>Here&#39;s a few paragraphs of basic concepts that should help you understand how Egnyte APIs work.</p>
+<p><strong>Egnyte domain</strong></p>
+<p>An instance of Egnyte Connect product that is owned by a client has a separate subdomain {name}.egnyte.com. Can have a custom domain name with branding.</p>
+<p>Only {name}.egnyte.com domain names work with Public API so a custom domain needs to be resolved to .egnyte.com before being used. Don&#39;t worry, we have a <a href="./auth.html">service for that</a></p>
+<p><strong>file group_id and entry_id</strong></p>
+<p>A file in Egnyte Connect can have versions. Every time you update the file, group_id remains the same and points to the file, but every version gets a new entry_id that points to it.</p>
+<p><strong>/Shared and /Private</strong></p>
+<p>/Shared is the root of a company&#39;s folder tree.</p>
+<p>/Private is where each user has their own folder accessible only by them and domain admins</p>
+<p><strong>permissions</strong></p>
+<p>Permissions are set on a folder level and all files inside the folder are accessible with the same permissions.</p>
+<p>Permissions only work in /Shared, <strong>not</strong> in /Private</p>
+        </article>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+            <a href="#top"> &#11192; Back to top</a>
+        </div>
+    </div>
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Request throttling / QPS</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body data-title="Request throttling / QPS">
+    <div class="wrapper">
+        <div class="egnyte-branding">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+        </div>
+        <article class="markdown-body"><h1 id="request-throttling-/-qps"><a class="header-link" href="#request-throttling-/-qps"></a>Request throttling / QPS</h1>
+<p>Our API rate limits restrict both the number of calls per day and number of calls per second. Limits are enforced per access token rather than against the entire key. So, even if one user exceeds their quota under your key, other users will still be able to access Egnyte through your application. Integrations should be built with inherent support for receiving and handling Quota limit errors.</p>
+<p>The default settings for all tokens issued under a key are:</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Key</td>
+<td>2 API calls per second per token; 1000 API calls per day per token</td>
+</tr>
+<tr>
+<td>OAuth token endpoint</td>
+<td>100 token requests per hour</td>
+</tr>
+</tbody>
+</table>
+<p>If you anticipate that your application&#39;s features will be undermined by these limits, please <a href="./contact.html">contact us</a> and we can discuss other arrangements.</p>
+<p>If your API call is throttled you will see a response with a 403 HTTP status code with one of two possible values for the <code>X-Mashery-Error-Code</code> header field:</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERR_403_DEVELOPER_OVER_QPS</td>
+<td>Exceeded per second throttle</td>
+</tr>
+<tr>
+<td>ERR_403_DEVELOPER_OVER_RATE</td>
+<td>Exceeded daily quota</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>Retry-After</code> header will be set to the number of seconds until the relevant throttle will next be reset.</p>
+<p>In addition to the general API endpoint rate limiting, the OAuth token endpoint (/puboauth/token) is also rate limited. When throttled, you will see a response with a 409 HTTP status code. The Retry-After header will be set to the number of seconds until the throttle will next be reset. In general, you will not encounter this limit since you should be requesting a token only once per user and holding on to it rather than requesting a token repeatedly.</p>
+        </article>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+            <a href="#top"> &#11192; Back to top</a>
+        </div>
+    </div>
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

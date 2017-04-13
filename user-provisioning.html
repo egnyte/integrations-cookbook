@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>User provisioning</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body data-title="User provisioning">
+    <div class="wrapper">
+        <div class="egnyte-branding">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+        </div>
+        <article class="markdown-body"><h1 id="user-provisioning"><a class="header-link" href="#user-provisioning"></a>User provisioning</h1>
+<h2 id="introduction"><a class="header-link" href="#introduction"></a>Introduction</h2>
+<p>Egnyte Connect has a nice UI for managing users, but starting at some quantities it becomes troublesome.</p>
+<p>If you&#39;re building a user management service or an SSO provider, you want to let your customers transfer users and groups into Egnyte Connect.</p>
+<h3 id="use-this-recipe-if-you:"><a class="header-link" href="#use-this-recipe-if-you:"></a>Use this recipe if you:</h3>
+<ul class="list">
+<li>want to provision users and groups to Egnyte Connect</li>
+</ul>
+<h2 id="ingredients"><a class="header-link" href="#ingredients"></a>Ingredients</h2>
+<ul class="list">
+<li>Two tablespoons of understanding: <a href="./definitions.html">Egnyte-specific terms</a></li>
+<li><a href="./auth.html">Authentication</a></li>
+<li><a href="https://developers.egnyte.com/docs/read/User_Management_API_Documentation">Public API Users Management</a></li>
+<li><a href="https://developers.egnyte.com/docs/read/Group_Management">Public API Groups Management</a></li>
+<li>Consider using an <a href="https://developers.egnyte.com/Egnyte_SDK">SDK</a> matching your preferred language (optional)</li>
+</ul>
+<h2 id="steps"><a class="header-link" href="#steps"></a>Steps</h2>
+<ol class="list">
+<li>Implement Auth - use a web app interface (or a webview) to go through OAuth2 with our Enhanced Auth Service. If you can&#39;t use web auth flow, <a href="./contact.html">get in touch</a></li>
+<li>After authenticating the user make sure they&#39;re an admin - get <a href="https://developers.egnyte.com/docs/read/Public_API_Authentication#Getting-User-Info">Getting User Info</a> for current user info and request Users API for details by id to check if current user is an admin. If not, they won&#39;t be able to provision users.</li>
+<li>Use Users and Groups APIs to create what you need.</li>
+<li>Beware of throttling - your API key is only allowing a certain number of requests per second per user. SDKs should handle that for you.</li>
+<li>Bake your integration and send it for certification.</li>
+</ol>
+<h3 id="tips"><a class="header-link" href="#tips"></a>Tips</h3>
+<ul class="list">
+<li>If you already have a <a href="https://tools.ietf.org/html/draft-scim-api-01">SCIM1.1</a> compliant client, it might work with our APIs without modification.</li>
+</ul>
+        </article>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+            <a href="#top"> &#11192; Back to top</a>
+        </div>
+    </div>
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

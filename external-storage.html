@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>External Storage Provider</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body data-title="External Storage Provider">
+    <div class="wrapper">
+        <div class="egnyte-branding">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+        </div>
+        <article class="markdown-body"><h1 id="external-storage-provider"><a class="header-link" href="#external-storage-provider"></a>External Storage Provider</h1>
+<h2 id="introduction"><a class="header-link" href="#introduction"></a>Introduction</h2>
+<p>Egnyte is often used as a central file storage and access platform for a whole company. Many integrations have one simple role - provide some product&#39;s functionality for files stored in Egynte. In such scenarios, Egnyte Connect is working as a so called External Storage Provider.</p>
+<p>Customers appreciate these integrations because they help them use multiple tools in their company without having to look for files and their versions in all services they use.</p>
+<h3 id="use-this-recipe-if-you:"><a class="header-link" href="#use-this-recipe-if-you:"></a>Use this recipe if you:</h3>
+<ul class="list">
+<li>want to let your users open and save their files from/to Egnyte Connect inside your product</li>
+<li>want to allow exploring files in your product&#39;s user interface OR store all content from your product in one folder in Egnyte</li>
+<li>don&#39;t need to have your functionality available in Egnyte UI context menus.</li>
+</ul>
+<h2 id="ingredients"><a class="header-link" href="#ingredients"></a>Ingredients</h2>
+<ul class="list">
+<li>Two tablespoons of understanding: <a href="./definitions.html">Egnyte-specific terms</a></li>
+<li><a href="./auth.html">Authentication</a></li>
+<li><a href="https://developers.egnyte.com/docs/read/File_System_Management_API_Documentation">Public API for file system</a><ul class="list">
+<li>get folder info</li>
+<li>get file metadata</li>
+<li>get file contents</li>
+<li>create file version</li>
+<li>upload file</li>
+<li>lock (optional)</li>
+</ul>
+</li>
+<li><a href="https://github.com/egnyte/egnyte-js-sdk/blob/master/src/docs/widgets.md">JS SDK Filepicker</a> (optional)</li>
+<li>Your back-end language specific SDK (optional)</li>
+</ul>
+<h2 id="steps"><a class="header-link" href="#steps"></a>Steps</h2>
+<p>Make sure you plan your integration in a way that always uses Storage API for reading the files and writing back. You can introduce a temporary cache and delay sending the changed file, sure, but make sure you <strong>don&#39;t try to implement synchronization</strong> between your service&#39;s permanent cloud storage and Egnyte.</p>
+<p>It always turns out to be much more complicated than initially estimated. And some customers won&#39;t be able to use your integration if their company&#39;s data governance policy is strict.</p>
+<p>Instead, we recommend you write a thin abstraction layer on top of Storage API so that it&#39;s compatible with your current storage handling code. Then it can be put in place of any other storage your product is using.</p>
+<ol class="list">
+<li>Implement Auth - use the Enhanced Auth Service to receive OAuth2 code and exchange it for a token.</li>
+<li>Decide if you want to use one &quot;Admin&quot; token for all interactions or let every user get authenticated separately. We suggest you do your best to choose the latter - API request limits are per-user.</li>
+<li>Use Storage API for handling files.</li>
+<li>Storing location options:<ul class="list">
+<li>Use JS SDK Filepicker to get user&#39;s choice of file id</li>
+<li>Implement your own file chooser</li>
+<li>Use a single (user-defined) path for all files and use convention for file and folder names - eg. based on project names or discussion titles in your product.</li>
+</ul>
+</li>
+<li>Bake your integration and send it for certification.</li>
+</ol>
+        </article>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+            <a href="#top"> &#11192; Back to top</a>
+        </div>
+    </div>
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

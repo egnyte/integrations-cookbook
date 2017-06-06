@@ -15,6 +15,7 @@ The purpose of short recipes is to limit the scope of documentation you read to 
 | --- |
 |**Introduction**|
 |[Getting Started](getting-started.md)|
+|[API examples Postman collection](api-examples.md)|
 |[Certification](certification.md)|
 |**Basic recipes**|
 |[Authentication](auth.md)|
@@ -31,8 +32,6 @@ The purpose of short recipes is to limit the scope of documentation you read to 
 |[Quick context menu action](context-menu.md)|
 |[Editor for certain file types](editor.md)|
 |[Elaborate context menu action](elaborate-uint.md)|
-|**API Usage Examples in Postman**|
-|[Working with Egnyte Postman collection](api-examples.md)|
 
 
 ## How does it work?

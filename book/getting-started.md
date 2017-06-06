@@ -8,6 +8,8 @@ As a developer writing an integration with Egnyte, these are the first steps you
 1. Check if your API key works with your developer environment
 1. Choose the recipes you want to follow and... happy coding!
 
+# You can also try our examples in Postman - [check here](api-examples.md)
+
 ## Getting JavaScript SDK into your front-end pipeline
 
 JavaScript SDK in version 2.x is distributed as a standalone, minified bundle.

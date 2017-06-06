@@ -57,12 +57,24 @@ body {
     margin: 0 20px
 }
 
+.markdown-body table {
+    word-break: normal;
+}
+
 .markdown-body img {
     float: left;
     padding: 5px;
     border: 1px solid #ddd;
     border-radius: 2px;
     margin: 0 10px 10px;
+}
+.markdown-body a img {
+    float: none;
+    margin: 0;
+}
+
+.markdown-body {
+    overflow: visible;
 }
 
 article {

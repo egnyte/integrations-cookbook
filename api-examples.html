@@ -44,28 +44,28 @@
 <li>Set active environment<ul class="list">
 <li>It should be <strong>imported with &#39;Run in Postman&#39; button</strong> <img src="./assets/active-environment.png" alt="Screenshot"></li>
 <li>Download from <strong>link above</strong></li>
-<li><strong>Add new (<a href="https://www.getpostman.com/docs/postman/environments_and_globals/manage_environments">read here</a>)</strong></li>
+<li><strong>Add new</strong> (<a href="https://www.getpostman.com/docs/postman/environments_and_globals/manage_environments">tutorial here</a>)</li>
 </ul>
 </li>
-<li>To set default credentials run <strong>&#39;Set Environment&#39;</strong> at the bottom of the collection - it uses <em>random strings for random folder paths</em> <img src="./assets/set-environment.png" alt="Screenshot"></li>
-<li>Go to some <strong>&quot;Basic Flow&quot; folders</strong> like <strong>&quot;Filesystem API - Basic Flow&quot;</strong> and try it <strong>step by step</strong> (use &#39;Reset Environment&#39; for new random values)</li>
+<li>To set default credentials run <code>Set Environment</code> at the bottom of the collection - it uses random strings for random folder paths <img src="./assets/set-environment.png" alt="Screenshot"></li>
+<li>Go to some <code>Basic Flow</code> sections like <code>Filesystem API - Basic Flow</code> and try it <strong>step by step</strong> (use &#39;Reset Environment&#39; for new random values)</li>
 <li>Read about <strong>API details</strong> on <a href="https://developers.egnyte.com/docs/read/Home">developers.egnyte.com</a></li>
 </ol>
 <hr>
 <h2 id="custom-credentials"><a class="header-link" href="#custom-credentials"></a>Custom credentials</h2>
 <ol class="list">
-<li>Go to &#39;Set Environment&#39;</li>
-<li>Choose &#39;Pre-request Script&#39; tab</li>
+<li>Go to <code>Set Environment</code></li>
+<li>Choose <code>Pre-request Script</code> tab</li>
 <li>Change your credentials (to obtain authorization variable value read next section) <img src="./assets/custom-credentials.png" alt="Screenshot"></li>
 <li>Send request!</li>
 </ol>
 <hr>
 <h2 id="authentication"><a class="header-link" href="#authentication"></a>Authentication</h2>
 <ol class="list">
-<li>Set your credentials in <strong>&#39;Set Environment&#39; request</strong> in <strong>&#39;Pre-request Script&#39; tab</strong> and send it <strong>(you don&#39;t need authorization value right now, leave it as it is)</strong></li>
-<li>Click <strong>&quot;Authorization&quot; tab</strong></li>
-<li>Choose <strong>&quot;OAuth 2.0&quot;</strong> from the list <img src="./assets/authorization-oauth2.png" alt="Screenshot"></li>
-<li>Click <strong>&#39;Get New Access Token&#39;</strong> button</li>
+<li>Set your credentials in <code>Set Environment</code> request in <code>Pre-request Script</code> tab and send it <em>(you don&#39;t need authorization value right now, leave it as it is)</em></li>
+<li>Click <code>Authorization</code> tab</li>
+<li>Choose <code>OAuth 2.0</code> from the list <img src="./assets/authorization-oauth2.png" alt="Screenshot"></li>
+<li>Click <code>Get New Access Token</code> button</li>
 <li><strong>Copy</strong> the following <strong>without changing text</strong> to form in Postman</li>
 </ol>
 <table>
@@ -79,42 +79,35 @@
 <tr>
 <td>Token Name</td>
 <td>{Choose name for your token}</td>
-<td></td>
 </tr>
 <tr>
 <td>Auth URL</td>
 <td><a href="https://{{domain_name}}/puboauth/token?client_id={{client_id}}&amp;redirect_uri=https://www.getpostman.com/oauth2/callback&amp;response_type=code">https://{{domain_name}}/puboauth/token?client_id={{client_id}}&amp;redirect_uri=https://www.getpostman.com/oauth2/callback&amp;response_type=code</a></td>
-<td></td>
 </tr>
 <tr>
 <td>Access Token URL</td>
 <td><a href="https://{{domain_name}}/puboauth/token">https://{{domain_name}}/puboauth/token</a></td>
-<td></td>
 </tr>
 <tr>
 <td>Client ID</td>
 <td>{{client_id}}</td>
-<td></td>
 </tr>
 <tr>
 <td>Client Secret</td>
 <td>{{client_secret}}</td>
-<td></td>
 </tr>
 <tr>
 <td>Scope</td>
 <td>Egnyte.filesystem Egnyte.user Egnyte.group Egnyte.link Egnyte.permission Egnyte.bookmark Egnyte.launchwebsession</td>
-<td></td>
 </tr>
 <tr>
 <td>Grant Type</td>
 <td>Authorization</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<h1 id="now-you-can-use-the-obtained-token---check-"custom-credentials"-section-above."><a class="header-link" href="#now-you-can-use-the-obtained-token---check-"custom-credentials"-section-above."></a>Now you can use the obtained token - check &quot;Custom credentials&quot; section above.</h1>
-<p><strong>More details: <a href="https://developers.egnyte.com/docs/read/Home">developers.egnyte.com</a></strong></p>
+<p><strong>Now you can use the obtained token - check &quot;Custom credentials&quot; section above.</strong></p>
+<p><em>More details: <a href="https://developers.egnyte.com/docs/read/Home">developers.egnyte.com</a></em></p>
         </article>
         <div class="nav">
             <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>

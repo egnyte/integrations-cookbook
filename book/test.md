@@ -36,7 +36,8 @@ This test will help you find out which recipes you should read first.
       - Your product UIs
         - Do you need users to be able to choose files or a folder?
           - Yes
-            - Read [Share a link to file](share-link.md)
+            - Read [File Picker Service](filepicker-service.md) if you want to keep it simple
+            - For more, read [Share a link to file](share-link.md)
         - Does your integration need to do anything except basic file get and save in Egynte?
           - Yes
             - Do you want to share links to files?

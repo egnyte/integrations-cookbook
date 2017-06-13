@@ -6,10 +6,11 @@ Egnyte is often used as a central file storage and access platform for a whole c
 
 Customers appreciate these integrations because they don't have to leave your application's context to create the link and copy-paste it.
 
-> We're in the process of building a service that will eliminate most work in this use case by taking over the responsibility for authentication and rendering filepicker. Let us know if you're interested.
+> [File Picker Service](filepicker-service.md) is available in beta. You can solve this use case with close to no development work.
 
 ### Use this recipe if you:
 - want to let your users post links to files in your apps' content
+- want to control authentication and file picker (if not, see File Picker Service)
 - don't need to have your functionality available in Egnyte UI context menus.
 
 ## Ingredients

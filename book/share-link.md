@@ -31,6 +31,7 @@ While you can use front-end only to build this integration, you'd have to authen
 Don't store access tokens in the browser. We had developers try that before. There's a certification step at the end of development to prevent listing an integration that would attempt such things.
 
 1. Implement Auth - use the Enhanced Auth Service to receive OAuth2 code and exchange it for a token.
+1. [Include JavaScript SDK](sdk-get-started.md)
 1. Use JS SDK Filepicker and let user choose the file. Note you can configure many options about the filepicker like single/multi selection.
 1. When user has made the choice, take the file `group_id` and use it for creating a link
 1. Decide what kind of links you want to create: [Link types](link-types.md) or what choice to give users. Feel free to consult your choices with someone at Egnyte. We know how people use various kinds of links.

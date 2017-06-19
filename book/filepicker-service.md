@@ -1,4 +1,4 @@
-# File Picker as a Service [BETA]
+# Integrate via File Picker as a Service [BETA]
 
 ## What does it mean it's BETA?
 
@@ -23,7 +23,7 @@ If you're after a simple integration that allows the user to choose a file from 
 ## Ingredients
 
 - Two tablespoons of understanding: [Egnyte-specific terms](definitions.md)
-- API Key and Beta registration
+- API Key and **Beta registration**
 - [File Picker Service documentation](https://github.com/egnyte/for-integrators/blob/master/doc/FPaaS.md)
 
 ## Steps

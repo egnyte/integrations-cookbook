@@ -23,23 +23,15 @@
         <article class="markdown-body"><h1 id="getting-started"><a class="header-link" href="#getting-started"></a>Getting Started</h1>
 <p>As a developer writing an integration with Egnyte, these are the first steps you take:</p>
 <ol class="list">
+<li>Browse this cook book briefly to get the idea for what you can use</li>
+<li><a href="./contact.html">Get in touch</a> with your partner account manager to get access to a developer environment. Let them know if you&#39;ll use UI Integration Framework of File Picker Service</li>
 <li>Set up an account on <a href="https://developers.egnyte.com">API Portal</a></li>
-<li>Browse this cook book briefly to decide if you want to use the UI Integration Framework</li>
-<li><a href="./contact.html">Get in touch</a> with your partner account manager to get access to a developer environment. Let them know if you&#39;ll use UI Integration Framework</li>
 <li>Check if your API key works with your developer environment</li>
 <li>Choose the recipes you want to follow and... happy coding!</li>
 </ol>
+<p>Your API key you got from the registration will initially be limited to only access one Egnyte domain. That domain will probably be your developer environment. Your key limitation will be lifted once you <a href="./certification.html">get certified</a>.</p>
 <p>While you&#39;re exploring our APIs you can also try our <a href="./api-examples.html">API examples connection in Postman</a></p>
-<h2 id="getting-javascript-sdk-into-your-front-end-pipeline"><a class="header-link" href="#getting-javascript-sdk-into-your-front-end-pipeline"></a>Getting JavaScript SDK into your front-end pipeline</h2>
-<p>JavaScript SDK in version 2.x is distributed as a standalone, minified bundle.
-It contains all the css and assets in the 60KB bundle.</p>
-<p>When you add the egnyte.min.js to a page as a</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"egnyte.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><p> it&#39;ll be available in a global namespace as &quot;Egnyte&quot; or <code>window.Egnyte</code></p>
-<p>If you wish to <code>require</code> or <code>import</code> the SDK for front-end, you can&#39;t just require the <code>engyte-js-sdk</code> unless you&#39;re using browserify and are ready to set up all necessary transforms.</p>
-<p>Instead, you should:</p>
-<pre class="hljs"><code><span class="hljs-built_in">require</span>(<span class="hljs-string">'egnyte-js-sdk/dist/egnyte.min'</span>)</code></pre><p>See also: <a href="https://github.com/egnyte/for-integrators/tree/master/examples/javascript/browser">Browser examples</a>. One of the examples shows a webpack setup.</p>
-<p>Webpack will warn that you&#39;re bundling a minified file, but that&#39;s really a problem only if you didn&#39;t mean to (might mean you included something from your build results creating a recursive build...)</p>
-<p>Version 3 of egnyte-js-sdk package will introduce more means of including certain components of the SDK in webpack and alike.</p>
+<p>If you&#39;re working with the JavaScript SDK, see <a href="./sdk-get-started.html">Getting JavaScript SDK into your front-end pipeline</a></p>
         </article>
         <div class="nav">
             <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>

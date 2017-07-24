@@ -1,6 +1,6 @@
 # Egnyte-specific terms
 
-Here's a few paragraphs of basic concepts that should help you understand how Egnyte APIs work.
+Here are a few basic concepts to help you understand how Egnyte APIs work.
 
 
 **Egnyte domain**

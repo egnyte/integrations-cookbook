@@ -14,7 +14,7 @@ Currently Web UI supports this framework and adding it to desktop clients is on 
 
 ### Security
 
-Invocation is passing Public API access tokens to your app. We require that you handle the token securely and we will check that in certification. You cannot expose the token to the browser anywhere in the process of Invocation. You need to make sure users' access to Egnyte or your application is not leaked to browsing history or a third-party.
+Invocation is passing Public API access tokens to your app. We require that you handle the token securely and we will check it in certification. You cannot expose the token to the browser anywhere in the process of Invocation. You need to make sure users' access to Egnyte or your application is not leaked to browsing history or any third-party.
 
 ## Detailed documentation
 

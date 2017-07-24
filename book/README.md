@@ -2,7 +2,7 @@
 
 Hi,
 
-welcome to our cook book, the best place to start when preparing to build an integration.
+Welcome to our cookbook, the best place to start when preparing to build an integration.
 
 This book is intentionally kept short and full of external links.
 The purpose of short recipes is to limit the scope of documentation you read to get your project off the ground.
@@ -36,8 +36,8 @@ The purpose of short recipes is to limit the scope of documentation you read to 
 
 ## How does it work?
 
-Cook book contains recipes for various types of integrations. Every recipe has the same format:
-- Introduction - lets you check if it's the recipe you need
+This cookbook contains recipes for various types of integrations. Every recipe follows the same format:
+- Introduction - to check if it's the recipe you need
 - Ingredients - lists components and APIs recommended for building the integration
 - Steps - explains how to get started and avoid common issues
 
@@ -47,4 +47,4 @@ Some integration recipes also refer to basic recipes with more detailed descript
 
 Q: Why doesn't this cookbook have photos of tasty recipe results? Cookbooks always have those!
 
-A: Great idea. Check this link for an explanation why we don't have it yet: [here](TBD.md)
+A: Great idea. Follow this link for an explanation why they are not there yet: [here](TBD.md)

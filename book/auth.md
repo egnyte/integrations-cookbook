@@ -3,11 +3,11 @@
 Egnyte APIs use OAuth2.
 
 - API key (also known as client_id) - is the identifier of an application/integration
-- API token (also known as access_token) - auth token generated for a particular user using the API key and OAuth flow
+- API token (also known as access_token) - is the auth token generated for a particular user using the API key and OAuth flow
 
 We are providing a helper service *"Enhanced Auth Service"* to our partners developing apps that adds an additional step before OAuth Auth Code flow to ask the user about their Egnyte Connect domain (what's a domain? see [definitions](definitions.md))
 
-You should evaluate using the service before trying anything else. More on that below.
+You should consider using the service before trying anything else. More on that below.
 
 Our online documentation lists various methods of getting an access token:
 
@@ -28,7 +28,7 @@ After getting the domain, *Enhanced Auth Service* will get the Auth Code step do
 
 Use it just like you would use the first step of OAuth2 Code flow.
 
-We provide two URLs for the service to let you redirect users to the closest location, but in fact only one request is made to that server, so if you don't have means to figure out if the user should start in US or Europe, just pick one.
+We provide two URLs for the service to let you redirect users to the closest location, but in fact only one request is made to that server so if you don't have the means to figure out if the user should start in US or Europe, just pick one.
 
 ## Getting current user
 

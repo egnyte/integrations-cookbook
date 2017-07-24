@@ -6,6 +6,6 @@ If you want to build an integration, write to us at: `partners@egnyte.com`
 
 If you lost your API keys, go to [developers.egnyte.com](https://developers.egnyte.com) and log in.
 
-For technical support and guidance you can contact *Partner Integrations team* directly - you should have their email address in one of the first exchanges with your partner account manager.
+For technical support and guidance contact *Partner Integrations team* directly - you should have their email address in one of the first exchanges with your partner account manager.
 
 If you're a developer and someone else in your organization has the contacts, and you're having trouble getting them, you can email `api-support@egnyte.com` or `partners@egnyte.com`. When you do, explain you're a partner building an integration and you need to get escalated to *Partner Integrations team*.

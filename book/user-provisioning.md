@@ -22,7 +22,7 @@ If you're building a user management service or an SSO provider, you want to let
 1. Implement Auth - use a web app interface (or a webview) to go through OAuth2 with our Enhanced Auth Service. If you can't use web auth flow, [get in touch](./contact.md)
 1. After authenticating the user make sure they're an admin - get [Getting User Info](https://developers.egnyte.com/docs/read/Public_API_Authentication#Getting-User-Info) for current user info and request Users API for details by id to check if current user is an admin. If not, they won't be able to provision users.
 1. Use Users and Groups APIs to create what you need.
-1. Beware of throttling - your API key is only allowing a certain number of requests per second per user. SDKs should handle that for you.
+1. Beware of throttling - your API key only allows a certain number of requests per second per user. SDKs should handle that for you.
 1. Bake your integration and send it for certification.
 
 ### Tips

@@ -3,8 +3,8 @@
 As a developer writing an integration with Egnyte, these are the first steps you take:
 
 1. Browse this cook book briefly to get the idea for what you can use
-1. [Get in touch](contact.md) with your partner account manager to get access to a developer environment. Let them know if you'll use UI Integration Framework of File Picker Service
-1. Set up an account on [API Portal](https://developers.egnyte.com)
+1. [Request Developer Environment](http://bit.ly/2sSitRt)
+1. Once you know your domain, set up an account on [API Portal](https://developers.egnyte.com)
 1. Check if your API key works with your developer environment
 1. Choose the recipes you want to follow and... happy coding!
 

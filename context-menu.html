@@ -22,7 +22,7 @@
         </div>
         <article class="markdown-body"><h1 id="context-menu-option-in-egnyte-connect-ui"><a class="header-link" href="#context-menu-option-in-egnyte-connect-ui"></a>Context menu option in Egnyte Connect UI</h1>
 <h2 id="introduction"><a class="header-link" href="#introduction"></a>Introduction</h2>
-<p>Your product can be instantly accessible to Egnyte customers through a UI intergation, which puts your options in the context menu for files and folders.</p>
+<p>Your product can be instantly accessible to Egnyte customers through a UI integration, which puts your options in the context menu for files and folders.</p>
 <p class="img-container"><img src="./assets/context-menu.png" alt="Screenshot of a context menu"></p>
 <p>This is how some of our existing partners provide preview and manipulation functionality for specific file types.</p>
 <h3 id="use-this-recipe-if-you:"><a class="header-link" href="#use-this-recipe-if-you:"></a>Use this recipe if you:</h3>
@@ -46,8 +46,8 @@
 <li>Fill it in according to App Definition docs. Focus on configuring endpoint URLs you want to implement. You need to provide the <code>integrations</code> field as JSON.</li>
 <li>Go back to <em>Apps &amp; Add-Ons</em>, find your app on the listing and <strong>enable</strong>, then switch from admin mode to user mode and <strong>add</strong> it for your current user.</li>
 <li>Read about UI Invocation and implement first two steps - the POST endpoint and the <code>browserFacingUrl</code> handler</li>
-<li>Run it form context menu of your sandbox domain for testing.</li>
-<li>If you don&#39;t have reasons to do otherwise, follow the <a href="https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_flow.md#suggested-steps-to-ensure-invocation-is-securely-handled">Suggested steps to ensure invocation is securely handled</a> to pin the invocation input to user session as step 3. <strong>Important: make sure the url you send back to Egnyte can&#39;t be used by someone else</strong>. If you don&#39;t want to use the suggested steps or you&#39;re having trouble following the diagram, <a href="./contact.html">get in touch</a></li>
+<li>Run it from the context menu of your sandbox domain for testing.</li>
+<li>If you don&#39;t have any reason to do otherwise, follow the <a href="https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_flow.md#suggested-steps-to-ensure-invocation-is-securely-handled">Suggested steps to ensure invocation is securely handled</a> to pin the invocation input to user session as step 3. <strong>Important: make sure the url you send back to Egnyte can&#39;t be used by someone else</strong>. If you don&#39;t want to use the suggested steps or you&#39;re having trouble following the diagram, <a href="./contact.html">get in touch</a></li>
 <li>Build your functionality using the token passed in invocation to fetch files and save changes.</li>
 <li>Bake your integration and send it for certification.</li>
 </ol>

@@ -24,10 +24,10 @@
 <p>Egnyte APIs use OAuth2.</p>
 <ul class="list">
 <li>API key (also known as client_id) - is the identifier of an application/integration</li>
-<li>API token (also known as access_token) - auth token generated for a particular user using the API key and OAuth flow</li>
+<li>API token (also known as access_token) - is the auth token generated for a particular user using the API key and OAuth flow</li>
 </ul>
 <p>We are providing a helper service <em>&quot;Enhanced Auth Service&quot;</em> to our partners developing apps that adds an additional step before OAuth Auth Code flow to ask the user about their Egnyte Connect domain (what&#39;s a domain? see <a href="./definitions.html">definitions</a>)</p>
-<p>You should evaluate using the service before trying anything else. More on that below.</p>
+<p>You should consider using the service before trying anything else. More on that below.</p>
 <p>Our online documentation lists various methods of getting an access token:</p>
 <ul class="list">
 <li><a href="https://developers.egnyte.com/docs/read/Public_API_Authentication#Authorization-Code-Flow">AUTHORIZATION CODE FLOW</a> - your default choice of OAuth2 flow. It&#39;s also the only flow that works with <em>Enhanced Auth Service</em></li>
@@ -41,7 +41,7 @@
 <h3 id="usage"><a class="header-link" href="#usage"></a>Usage</h3>
 <p><a href="https://developers.egnyte.com/docs/read/Public_API_Authentication#Enhanced-Auth-Service">Enhanced Auth Service documentation</a></p>
 <p>Use it just like you would use the first step of OAuth2 Code flow.</p>
-<p>We provide two URLs for the service to let you redirect users to the closest location, but in fact only one request is made to that server, so if you don&#39;t have means to figure out if the user should start in US or Europe, just pick one.</p>
+<p>We provide two URLs for the service to let you redirect users to the closest location, but in fact only one request is made to that server so if you don&#39;t have the means to figure out if the user should start in US or Europe, just pick one.</p>
 <h2 id="getting-current-user"><a class="header-link" href="#getting-current-user"></a>Getting current user</h2>
 <p>It&#39;s sometimes too easy to miss it, so it deserves a direct link here.</p>
 <p>This is how you get the current user based on an access token in the request:

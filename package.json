@@ -4,7 +4,8 @@
   "scripts": {
     "start": "npm run build",
     "build": "rimraf ./html/* && generate-md --layout ./layout --input ./book --output ./html && ncp ./html/README.html ./html/index.html",
-    "dist": "npm run build && gh-pages --message 'automated render to html' --dist ./html && echo 'OK, now push gh-pages branch to github'"
+    "dist": "npm run build && gh-pages --message 'automated render to html' --dist ./html && echo 'OK, now run publish-gh'",
+    "publish-gh": "git checkout gh-pages && git pull origin gh-pages && git push github gh-pages && git checkout master"
   },
   "repository": {
     "type": "git",

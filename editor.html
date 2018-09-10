@@ -48,9 +48,9 @@
 <p>As you see, there&#39;s no Auth mentioned in ingredients. That&#39;s because Egnyte is going to send API access tokens in invocations.</p>
 <p>It&#39;s important for UI Integrations to keep this token a secret (not expose it to the browser by passing it in URLs, cookies or localStorage).</p>
 <ol class="list">
-<li>Go to your development sandbox domain, open <em>Apps &amp; Add-Ons</em>, click to &quot;Manage my app definition&quot; and switch type to Egnyte UI Integration</li>
+<li>Go to your development sandbox domain, open <em>Apps &amp; Integrations</em>, click to &quot;Manage my app definition&quot; and switch type to Egnyte UI Integration</li>
 <li>Fill it in according to App Definition docs. Focus on configuring endpoint URLs you want to implement. You need to provide the <code>integrations</code> field as JSON. See below for details on configuring your editor.</li>
-<li>Go back to <em>Apps &amp; Add-Ons</em>, find your app on the listing and <strong>enable</strong>, then switch from admin mode to user mode and <strong>add</strong> it for your current user.</li>
+<li>Go back to <em>Apps &amp; Integrations</em>, find your app on the listing and <strong>enable</strong>, then switch from admin mode to user mode and <strong>add</strong> it for your current user.</li>
 <li>Read about UI Invocation and implement first two steps - the POST endpoint and the <code>browserFacingUrl</code> handler</li>
 <li>Run it form context menu of your sandbox domain for testing.</li>
 <li>If you don&#39;t have reasons to do otherwise, follow the <a href="https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_flow.md#suggested-steps-to-ensure-invocation-is-securely-handled">Suggested steps to ensure invocation is securely handled</a> to pin the invocation input to user session as step 3. <strong>Important: make sure the url you send back to Egnyte can&#39;t be used by someone else</strong>. If you don&#39;t want to use the suggested steps or you&#39;re having trouble following the diagram, <a href="./contact.html">get in touch</a></li>
@@ -66,6 +66,7 @@
             <span class="hljs-string">"types"</span>: [
                 <span class="hljs-string">"file"</span>
             ],
+            <span class="hljs-string">"actionType"</span>: <span class="hljs-string">"open"</span>,
             <span class="hljs-string">"serviceUrl"</span>: <span class="hljs-string">"https://example.com/ExamplePaint/files/invoke"</span>,
             <span class="hljs-string">"extensions"</span>: [
                 <span class="hljs-string">"bmp"</span>,
@@ -84,6 +85,7 @@
         }
     },</code></pre><p>It includes a specification of extensions and makes sure it&#39;s only available if the user can write back to the file.</p>
 <p>It doesn&#39;t specify quantity of files, so it&#39;s only available if a single file is selected.</p>
+<p><code>actionType</code> set to <code>open</code> makes your app show in &quot;open in&quot; submenu, also on the preview screen of a file. </p>
 <h3 id="creating-a-new-file"><a class="header-link" href="#creating-a-new-file"></a>Creating a new file</h3>
 <p>Some time in 2017 we will also make a new &quot;new_menu&quot; entrypoint available. It will let you add an option for creating new files of your preferred type.
 For now you can implement that functionality in &quot;more_menu&quot; entrypoint, as the protocol is going to be identical. All you&#39;ll need to change once new menu is available is the entrypoint name in your definition.</p>

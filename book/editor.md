@@ -30,9 +30,9 @@ As you see, there's no Auth mentioned in ingredients. That's because Egnyte is g
 
 It's important for UI Integrations to keep this token a secret (not expose it to the browser by passing it in URLs, cookies or localStorage).
 
-1. Go to your development sandbox domain, open *Apps & Add-Ons*, click to "Manage my app definition" and switch type to Egnyte UI Integration
+1. Go to your development sandbox domain, open *Apps & Integrations*, click to "Manage my app definition" and switch type to Egnyte UI Integration
 1. Fill it in according to App Definition docs. Focus on configuring endpoint URLs you want to implement. You need to provide the `integrations` field as JSON. See below for details on configuring your editor.
-1. Go back to *Apps & Add-Ons*, find your app on the listing and **enable**, then switch from admin mode to user mode and **add** it for your current user.
+1. Go back to *Apps & Integrations*, find your app on the listing and **enable**, then switch from admin mode to user mode and **add** it for your current user.
 1. Read about UI Invocation and implement first two steps - the POST endpoint and the `browserFacingUrl` handler
 1. Run it form context menu of your sandbox domain for testing.
 1. If you don't have reasons to do otherwise, follow the [Suggested steps to ensure invocation is securely handled](https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_flow.md#suggested-steps-to-ensure-invocation-is-securely-handled) to pin the invocation input to user session as step 3. **Important: make sure the url you send back to Egnyte can't be used by someone else**. If you don't want to use the suggested steps or you're having trouble following the diagram, [get in touch](./contact.md)
@@ -52,6 +52,7 @@ Example definition for an image editor service "ExamplePaint".
             "types": [
                 "file"
             ],
+            "actionType": "open",
             "serviceUrl": "https://example.com/ExamplePaint/files/invoke",
             "extensions": [
                 "bmp",
@@ -74,6 +75,8 @@ Example definition for an image editor service "ExamplePaint".
 It includes a specification of extensions and makes sure it's only available if the user can write back to the file.
 
 It doesn't specify quantity of files, so it's only available if a single file is selected.
+
+`actionType` set to `open` makes your app show in "open in" submenu, also on the preview screen of a file. 
 
 
 ### Creating a new file

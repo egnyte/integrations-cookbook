@@ -21,4 +21,4 @@ Invocation is passing Public API access tokens to your app. We require that you 
 - [UI Invocation flow](https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_flow.md)
 - [App definition docs](https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_definition.md)
 - For app definition, you'll only have to write the content for the `integrations` field manually, everything else is separate fields in the App Definition Form.
-- [User Settings](app-settings.md) - settings are there in case you really need them, but we recommend building UI integrations in a way that doesn't need a settings screen, but asks for settings on first invocation.
+- [User and domain Settings](app-settings.md) - settings are there in case you really need them, but we recommend building UI integrations in a way that doesn't need a settings screen, but asks for settings on first invocation.

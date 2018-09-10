@@ -47,13 +47,13 @@
 <li>Your back-end language specific SDK (optional)</li>
 </ul>
 <h2 id="steps"><a class="header-link" href="#steps"></a>Steps</h2>
-<p>Make sure you plan your integration in a way that always uses Storage API for reading the files and writing back. You can introduce a temporary cache and delay sending the changed file, sure, but make sure you <strong>don&#39;t try to implement synchronization</strong> between your service&#39;s permanent cloud storage and Egnyte.</p>
+<p>Make sure you plan your integration in a way that always uses File System API for reading the files and writing back. You can introduce a temporary cache and delay sending the changed file, sure, but make sure you <strong>don&#39;t try to implement synchronization</strong> between your service&#39;s permanent cloud storage and Egnyte.</p>
 <p>It always turns out to be much more complicated than initially estimated. And some customers won&#39;t be able to use your integration if their company&#39;s data governance policy is strict.</p>
-<p>Instead, we recommend you write a thin abstraction layer on top of Storage API so that it&#39;s compatible with your current storage handling code. Then it can be put in place of any other storage your product is using.</p>
+<p>Instead, we recommend you write a thin abstraction layer on top of File System API so that it&#39;s compatible with your current storage handling code. Then it can be put in place of any other storage your product is using.</p>
 <ol class="list">
 <li>Implement Auth - use the Enhanced Auth Service to receive OAuth2 code and exchange it for a token.</li>
 <li>Decide if you want to use one &quot;Admin&quot; token for all interactions or let every user get authenticated separately. We suggest you do your best to choose the latter - API request limits are per-user.</li>
-<li>Use Storage API for handling files.</li>
+<li>Use File System API for handling files.</li>
 <li>Storing location options:<ul class="list">
 <li>Use JS SDK Filepicker to get user&#39;s choice of file id</li>
 <li>Implement your own file chooser</li>

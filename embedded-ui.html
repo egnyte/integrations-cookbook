@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Embedded Egnyte Connect UI</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body data-title="Embedded Egnyte Connect UI">
+    <div class="wrapper">
+        <div class="egnyte-branding">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+        </div>
+        <article class="markdown-body"><h1 id="embedded-egnyte-connect-ui"><a class="header-link" href="#embedded-egnyte-connect-ui"></a>Embedded Egnyte Connect UI</h1>
+<h2 id="introduction"><a class="header-link" href="#introduction"></a>Introduction</h2>
+<p>Egnyte Connect has a simplified UI version which you can load inside of an iframe in your app.</p>
+<p>You can point to a specific directory based on your app&#39;s context.</p>
+<h3 id="use-this-recipe-if-you:"><a class="header-link" href="#use-this-recipe-if-you:"></a>Use this recipe if you:</h3>
+<ul class="list">
+<li>want to let your users directly access Egnyte Connect on a specific folder based on what they&#39;re browsing in your app</li>
+</ul>
+<h2 id="ingredients"><a class="header-link" href="#ingredients"></a>Ingredients</h2>
+<ul class="list">
+<li>Two tablespoons of understanding: <a href="./definitions.html">Egnyte-specific terms</a></li>
+<li><a href="./auth.html">Authentication</a></li>
+<li><a href="https://developers.egnyte.com/docs/read/Embedded_UI_API">Public API Embedded UI</a></li>
+</ul>
+<h2 id="steps"><a class="header-link" href="#steps"></a>Steps</h2>
+<ol class="list">
+<li>Implement Auth - use a web app interface to go through OAuth2 with our Enhanced Auth Service. </li>
+<li>Make sure you send &quot;Egnyte.launchwebsession&quot; scope among other scopes you may need. </li>
+<li>Make a request to the navigation API with <code>embedded=true</code> and <code>path</code> set to the folder of your choice.</li>
+<li>Load the &quot;redirect&quot; URL you get back in an iframe.</li>
+<li>Make sure you store and use the access_token securely on the backend and only send the redirect URL to the browser.</li>
+<li>Bake your integration and send it for certification.</li>
+</ol>
+<h3 id="tips"><a class="header-link" href="#tips"></a>Tips</h3>
+<ul class="list">
+<li>If you get errors about missing scope while you do send the &quot;Egnyte.launchwebsession&quot; scope in auth, add scope list to the token request body as well, to match the ones set in code request.</li>
+<li>Test your app with unusual characters in paths - you need to encode them correctly when passing to Navigate API</li>
+<li>The redirect URL you get from the API is one time use only, so on each reload you need to get a new one.</li>
+</ul>
+        </article>
+        <div class="nav">
+            <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
+            <a href="#top"> &#11192; Back to top</a>
+        </div>
+    </div>
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

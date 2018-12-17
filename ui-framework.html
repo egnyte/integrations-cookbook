@@ -26,7 +26,7 @@
 <h2 id="basic-concepts"><a class="header-link" href="#basic-concepts"></a>Basic concepts</h2>
 <p><strong>App definition</strong> - a json file with metadata about the app necessary to register it as a UI integration. When you start developing a UI integration, make sure you get a development environment with access to App Definition Form (ask your partner account manager or <a href="./contact.html">get in touch</a>)</p>
 <p><strong>Invocation</strong> - the process of calling a 3rd party app (your app!) from Egnyte UI.</p>
-<p><strong>Invocation&#39;s access token</strong> - the token that&#39;s sent along with invocation is scoped to allow you to use FS API, Users API and Permissions API. If you need more, you&#39;ll need to ask the user to authorize your app through regular Auth flow on the invoked screen or in userSettings.</p>
+<p><strong>Invocation&#39;s access token</strong> - the token that&#39;s sent along with invocation is scoped to allow you to use FS API, Users API and Permissions API. You can request a different scope by setting it in the API definition, see <a href="https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_definition.md">App definition docs</a></p>
 <h3 id="security"><a class="header-link" href="#security"></a>Security</h3>
 <p>Invocation is passing Public API access tokens to your app. We require that you handle the token securely and we will check it in certification. You cannot expose the token to the browser anywhere in the process of Invocation. You need to make sure users&#39; access to Egnyte or your application is not leaked to browsing history or any third-party.</p>
 <h2 id="detailed-documentation"><a class="header-link" href="#detailed-documentation"></a>Detailed documentation</h2>

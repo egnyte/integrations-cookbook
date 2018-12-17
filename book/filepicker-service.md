@@ -12,8 +12,6 @@ The single thing you'll need to do because of beta is update the script you're e
 
 If you're after a simple integration that allows the user to choose a file from Egnyte and perform a simple action like sharing a link to that file.
 
-*The service will also allow for more advanced actions via webhooks soon, letting your app perform an action on the file itself.*
-
 
 ### Use this recipe if you:
 - want to let your users post links to files in your apps' content

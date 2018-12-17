@@ -26,6 +26,7 @@ The purpose of short recipes is to limit the scope of documentation you read to 
 |[User provisioning](user-provisioning.md)|
 |[Reactive integration with Events API](events-app.md)|
 |**Egnyte in your UIs**|
+|[Embedded UI](embedded-ui.md)|
 |[External Storage Provider](external-storage.md)|
 |[Share a link to file](share-link.md)|
 |**Integrations with Egnyte UIs**|

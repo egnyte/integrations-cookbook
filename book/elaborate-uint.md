@@ -24,7 +24,8 @@ Your product can be instantly accessible to Egnyte customers through a UI interg
 - [UI Integration Framework](./ui-framework.md)
   - context_menu
   - more_menu
-  - new_menu (available soon)
+  - new_menu
+  - preview (coming soon)
   - user settings
 - Development environment with access to App Definition form (ask your partner account manager)
 - App Definition for your app

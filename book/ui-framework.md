@@ -10,7 +10,7 @@ Currently Web UI supports this framework and adding it to desktop clients is on 
 
 **Invocation** - the process of calling a 3rd party app (your app!) from Egnyte UI.
 
-**Invocation's access token** - the token that's sent along with invocation is scoped to allow you to use FS API, Users API and Permissions API. If you need more, you'll need to ask the user to authorize your app through regular Auth flow on the invoked screen or in userSettings.
+**Invocation's access token** - the token that's sent along with invocation is scoped to allow you to use FS API, Users API and Permissions API. You can request a different scope by setting it in the API definition, see [App definition docs](https://github.com/egnyte/for-integrators/blob/master/doc/UIntegrate_definition.md)
 
 ### Security
 

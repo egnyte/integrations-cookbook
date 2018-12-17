@@ -1,7 +1,7 @@
 # App Settings
 
 
-Your integration will be featured in our *Egnyte Builder*, also known as *Apps & Integrations*, where it can provide an option to open a user settings screen.
+Your integration will be featured in our *Apps & Integrations*, also known as *Apps & Integrations*, where it can provide an option to open a user settings screen.
 
 ![Screenshot of settings](./assets/settings-menu.png)
 

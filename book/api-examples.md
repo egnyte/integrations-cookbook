@@ -50,7 +50,8 @@ Access Token URL | https://{{domain_name}}/puboauth/token
 Client ID | {{client_id}}
 Client Secret | {{client_secret}}
 Scope | Egnyte.filesystem Egnyte.user Egnyte.group Egnyte.link Egnyte.permission Egnyte.bookmark Egnyte.launchwebsession
-Grant Type | Authorization
+Grant Type | Authorization code
+Client Authentication | Send client credentials in body
 
 **Now you can use the obtained token - check "Custom credentials" section above.**
 

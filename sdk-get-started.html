@@ -24,10 +24,10 @@
 <p>JavaScript SDK in version 2.x is distributed as a standalone, minified bundle.
 It contains all the css and assets in the 60KB bundle.</p>
 <p>When you add the egnyte.min.js to a page as a</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"egnyte.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><p> it&#39;ll be available in a global namespace as &quot;Egnyte&quot; or <code>window.Egnyte</code></p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;egnyte.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre><p> it&#39;ll be available in a global namespace as &quot;Egnyte&quot; or <code>window.Egnyte</code></p>
 <p>If you wish to <code>require</code> or <code>import</code> the SDK for front-end, you can&#39;t just require the <code>engyte-js-sdk</code> unless you&#39;re using browserify and are ready to set up all necessary transforms.</p>
 <p>Instead, you should:</p>
-<pre class="hljs"><code><span class="hljs-built_in">require</span>(<span class="hljs-string">'egnyte-js-sdk/dist/egnyte.min'</span>)</code></pre><p>See also: <a href="https://github.com/egnyte/for-integrators/tree/master/examples/javascript/browser">Browser examples</a>. One of the examples shows a webpack setup.</p>
+<pre class="hljs"><code><span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;egnyte-js-sdk/dist/egnyte.min&#x27;</span>)</code></pre><p>See also: <a href="https://github.com/egnyte/for-integrators/tree/master/examples/javascript/browser">Browser examples</a>. One of the examples shows a webpack setup.</p>
 <p>Webpack will warn that you&#39;re bundling a minified file, but that&#39;s really a problem only if you didn&#39;t mean to (might mean you included something from your build results creating a recursive build...)</p>
 <p>Version 3 of egnyte-js-sdk package will introduce more means of including certain components of the SDK in webpack and alike.</p>
         </article>

@@ -24,7 +24,7 @@
 <h2 id="introduction"><a class="header-link" href="#introduction"></a>Introduction</h2>
 <p>Egnyte is often used as a central file storage and access platform for a whole company. Many integrations have one simple role - provide some product&#39;s functionality for files stored in Egynte. In such scenarios, Egnyte Connect is working as a so called External Storage Provider.</p>
 <p>Customers appreciate these integrations because they help them use multiple tools in their company without having to look for files and their versions in all services they use.</p>
-<h3 id="use-this-recipe-if-you:"><a class="header-link" href="#use-this-recipe-if-you:"></a>Use this recipe if you:</h3>
+<h3 id="use-this-recipe-if-you"><a class="header-link" href="#use-this-recipe-if-you"></a>Use this recipe if you:</h3>
 <ul class="list">
 <li>want to let your users open and save their files from/to Egnyte Connect inside your product</li>
 <li>want to allow exploring files in your product&#39;s user interface OR store all content from your product in one folder in Egnyte</li>
@@ -54,12 +54,14 @@
 <li>Implement Auth - use the Enhanced Auth Service to receive OAuth2 code and exchange it for a token.</li>
 <li>Decide if you want to use one &quot;Admin&quot; token for all interactions or let every user get authenticated separately. We suggest you do your best to choose the latter - API request limits are per-user.</li>
 <li>Use File System API for handling files.</li>
-<li>Storing location options:<ul class="list">
+<li>Storing location options:</li>
+</ol>
+<ul class="list">
 <li>Use JS SDK Filepicker to get user&#39;s choice of file id</li>
 <li>Implement your own file chooser</li>
 <li>Use a single (user-defined) path for all files and use convention for file and folder names - eg. based on project names or discussion titles in your product.</li>
 </ul>
-</li>
+<ol class="list">
 <li>Bake your integration and send it for certification.</li>
 </ol>
         </article>

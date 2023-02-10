@@ -41,24 +41,24 @@
 <p>There&#39;s an endpoint in Public API that returns link settings. It&#39;s not documented officially yet, but is not experimental anymore and should not change.</p>
 <pre class="hljs"><code>GET <span class="hljs-regexp">/pubapi/</span>v1<span class="hljs-regexp">/links/</span>settings</code></pre><p>returns</p>
 <pre class="hljs"><code>{
-    <span class="hljs-string">"expiration"</span>: { //expiration setting by admin
-        <span class="hljs-string">"default"</span>: null, //object defining a number and unit (<span class="hljs-name">days</span>, weeks, months)
-        <span class="hljs-string">"max_allowed"</span>: null,
-        <span class="hljs-string">"upload_links"</span>: <span class="hljs-literal">true</span> //upload links allowed (<span class="hljs-name"><span class="hljs-builtin-name">not</span></span> relevant to APIs)
+    <span class="hljs-attr">&quot;expiration&quot;</span>: { <span class="hljs-comment">//expiration setting by admin</span>
+        <span class="hljs-attr">&quot;default&quot;</span>: <span class="hljs-literal">null</span>, <span class="hljs-comment">//object defining a number and unit (days, weeks, months)</span>
+        <span class="hljs-attr">&quot;max_allowed&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">&quot;upload_links&quot;</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">//upload links allowed (not relevant to APIs)</span>
     },
-    <span class="hljs-string">"file_links"</span>: { //types of file link access allowed
-        <span class="hljs-string">"anyone"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">"password"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">"domain"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">"recipients"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">"default_type"</span>: <span class="hljs-string">"anyone"</span>
+    <span class="hljs-attr">&quot;file_links&quot;</span>: { <span class="hljs-comment">//types of file link access allowed</span>
+        <span class="hljs-attr">&quot;anyone&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">&quot;password&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">&quot;domain&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">&quot;recipients&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">&quot;default_type&quot;</span>: <span class="hljs-string">&quot;anyone&quot;</span>
     },
-    <span class="hljs-string">"folder_links"</span>: { //types of file link access allowed
-        <span class="hljs-string">"anyone"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">"password"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">"domain"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-string">"recipients"</span>: <span class="hljs-literal">false</span>,
-        <span class="hljs-string">"default_type"</span>: <span class="hljs-string">"anyone"</span>
+    <span class="hljs-attr">&quot;folder_links&quot;</span>: { <span class="hljs-comment">//types of file link access allowed</span>
+        <span class="hljs-attr">&quot;anyone&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">&quot;password&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">&quot;domain&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">&quot;recipients&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">&quot;default_type&quot;</span>: <span class="hljs-string">&quot;anyone&quot;</span>
     }
 }</code></pre><p>If <code>file_links</code> is not present, all public links are disabled</p>
 <p><code>expiration.default.unit</code> of months actually means 30 day periods. It&#39;s not requiring you to count real months in the future.</p>
@@ -68,7 +68,7 @@
 <p>Creating a Deep Link:</p>
 <ol class="list">
 <li>Find out what the Egnyte domain and <code>group_id</code> is.</li>
-<li>Just concatenate strings: `<a href="https://{domain">https://{domain</a> name}.egnyte.com/navigate/file/{group_id}``</li>
+<li>Just concatenate strings: `https://{domain name}.egnyte.com/navigate/file/{group_id}``</li>
 </ol>
         </article>
         <div class="nav">

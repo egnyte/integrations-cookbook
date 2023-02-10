@@ -30,8 +30,8 @@
 </ul>
 <p>Or if you prefer video:</p>
 <ul class="list">
-<li><a href="https://www.youtube.com/watch?v=ptvV_Fc3hd8&amp;list=PLM-7VG-sgbtCJYpjQfmLCcJZ6Yd74oytQ">Introduction to Postman</a></li>
-<li><a href="https://www.youtube.com/watch?v=wArvaHYdw2I&amp;list=PLM-7VG-sgbtCJYpjQfmLCcJZ6Yd74oytQ">Using Environments</a></li>
+<li><a href="https://www.youtube.com/watch?v=ptvV_Fc3hd8&list=PLM-7VG-sgbtCJYpjQfmLCcJZ6Yd74oytQ">Introduction to Postman</a></li>
+<li><a href="https://www.youtube.com/watch?v=wArvaHYdw2I&list=PLM-7VG-sgbtCJYpjQfmLCcJZ6Yd74oytQ">Using Environments</a></li>
 </ul>
 <hr>
 <h2 id="getting-started"><a class="header-link" href="#getting-started"></a>Getting Started</h2>
@@ -53,7 +53,7 @@
 </ol>
 <hr>
 <h2 id="custom-credentials"><a class="header-link" href="#custom-credentials"></a>Custom credentials</h2>
-<ol class="list">
+<ol start="2">
 <li>Go to <code>Set Environment</code></li>
 <li>Choose <code>Pre-request Script</code> tab</li>
 <li>Change your credentials (to obtain authorization variable value read next section) <img src="./assets/custom-credentials.png" alt="Screenshot"></li>
@@ -61,7 +61,7 @@
 </ol>
 <hr>
 <h2 id="authentication"><a class="header-link" href="#authentication"></a>Authentication</h2>
-<ol class="list">
+<ol start="3">
 <li>Set your credentials in <code>Set Environment</code> request in <code>Pre-request Script</code> tab and send it <em>(you don&#39;t need authorization value right now, leave it as it is)</em></li>
 <li>Click <code>Authorization</code> tab</li>
 <li>Choose <code>OAuth 2.0</code> from the list <img src="./assets/authorization-oauth2.png" alt="Screenshot"></li>
@@ -75,18 +75,17 @@
 <th>Value</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Token Name</td>
 <td>{Choose name for your token}</td>
 </tr>
 <tr>
 <td>Auth URL</td>
-<td><a href="https://{{domain_name}}/puboauth/token?client_id={{client_id}}&amp;redirect_uri=https://www.getpostman.com/oauth2/callback&amp;response_type=code">https://{{domain_name}}/puboauth/token?client_id={{client_id}}&amp;redirect_uri=https://www.getpostman.com/oauth2/callback&amp;response_type=code</a></td>
+<td>https://{{domain_name}}/puboauth/token?client_id={{client_id}}&amp;redirect_uri=<a href="https://www.getpostman.com/oauth2/callback&amp;response_type=code">https://www.getpostman.com/oauth2/callback&amp;response_type=code</a></td>
 </tr>
 <tr>
 <td>Access Token URL</td>
-<td><a href="https://{{domain_name}}/puboauth/token">https://{{domain_name}}/puboauth/token</a></td>
+<td>https://{{domain_name}}/puboauth/token</td>
 </tr>
 <tr>
 <td>Client ID</td>
@@ -102,10 +101,13 @@
 </tr>
 <tr>
 <td>Grant Type</td>
-<td>Authorization</td>
+<td>Authorization code</td>
 </tr>
-</tbody>
-</table>
+<tr>
+<td>Client Authentication</td>
+<td>Send client credentials in body</td>
+</tr>
+</tbody></table>
 <p><strong>Now you can use the obtained token - check &quot;Custom credentials&quot; section above.</strong></p>
 <p><em>More details: <a href="https://developers.egnyte.com/docs/read/Home">developers.egnyte.com</a></em></p>
         </article>

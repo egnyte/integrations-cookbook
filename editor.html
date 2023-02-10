@@ -26,7 +26,7 @@
 <p>Your editor will become available in context menu for file extensions that you handle.
 <img src="./assets/context-menu.png" alt="Screenshot of a context menu"></p>
 <p>Some time in 2017 it will also become available in a separate menu accessible from the preview screen.</p>
-<h3 id="use-this-recipe-if-you:"><a class="header-link" href="#use-this-recipe-if-you:"></a>Use this recipe if you:</h3>
+<h3 id="use-this-recipe-if-you"><a class="header-link" href="#use-this-recipe-if-you"></a>Use this recipe if you:</h3>
 <ul class="list">
 <li>Want to provide editing capabilities for certain file types</li>
 </ul>
@@ -60,28 +60,28 @@
 </ol>
 <h3 id="editor-definition"><a class="header-link" href="#editor-definition"></a>Editor definition</h3>
 <p>Example definition for an image editor service &quot;ExamplePaint&quot;.</p>
-<pre class="hljs"><code>    <span class="hljs-string">"integrations"</span>: {
-        <span class="hljs-string">"editExamplePaint"</span>: {
-            <span class="hljs-string">"entryPoint"</span>: <span class="hljs-string">"context_menu"</span>,
-            <span class="hljs-string">"types"</span>: [
-                <span class="hljs-string">"file"</span>
+<pre class="hljs"><code>    <span class="hljs-string">&quot;integrations&quot;</span>: {
+        <span class="hljs-string">&quot;editExamplePaint&quot;</span>: {
+            <span class="hljs-string">&quot;entryPoint&quot;</span>: <span class="hljs-string">&quot;context_menu&quot;</span>,
+            <span class="hljs-string">&quot;types&quot;</span>: [
+                <span class="hljs-string">&quot;file&quot;</span>
             ],
-            <span class="hljs-string">"actionType"</span>: <span class="hljs-string">"open"</span>,
-            <span class="hljs-string">"serviceUrl"</span>: <span class="hljs-string">"https://example.com/ExamplePaint/files/invoke"</span>,
-            <span class="hljs-string">"extensions"</span>: [
-                <span class="hljs-string">"bmp"</span>,
-                <span class="hljs-string">"png"</span>,
-                <span class="hljs-string">"jpeg"</span>,
-                <span class="hljs-string">"jpg"</span>
+            <span class="hljs-string">&quot;actionType&quot;</span>: <span class="hljs-string">&quot;open&quot;</span>,
+            <span class="hljs-string">&quot;serviceUrl&quot;</span>: <span class="hljs-string">&quot;https://example.com/ExamplePaint/files/invoke&quot;</span>,
+            <span class="hljs-string">&quot;extensions&quot;</span>: [
+                <span class="hljs-string">&quot;bmp&quot;</span>,
+                <span class="hljs-string">&quot;png&quot;</span>,
+                <span class="hljs-string">&quot;jpeg&quot;</span>,
+                <span class="hljs-string">&quot;jpg&quot;</span>
             ],
-            <span class="hljs-string">"permissionLevels"</span>: [
-                <span class="hljs-string">"owner"</span>,
-                <span class="hljs-string">"full"</span>,
-                <span class="hljs-string">"editor"</span>
+            <span class="hljs-string">&quot;permissionLevels&quot;</span>: [
+                <span class="hljs-string">&quot;owner&quot;</span>,
+                <span class="hljs-string">&quot;full&quot;</span>,
+                <span class="hljs-string">&quot;editor&quot;</span>
             ],
-            <span class="hljs-string">"invocationMethod"</span>: <span class="hljs-string">"post_to_tab"</span>,
-            <span class="hljs-string">"icon"</span>: <span class="hljs-string">"https://example.comExamplePaint/static/edit_icon.png"</span>,
-            <span class="hljs-string">"text"</span>: <span class="hljs-string">"Edit in ExamplePaint"</span>
+            <span class="hljs-string">&quot;invocationMethod&quot;</span>: <span class="hljs-string">&quot;post_to_tab&quot;</span>,
+            <span class="hljs-string">&quot;icon&quot;</span>: <span class="hljs-string">&quot;https://example.comExamplePaint/static/edit_icon.png&quot;</span>,
+            <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;Edit in ExamplePaint&quot;</span>
         }
     },</code></pre><p>It includes a specification of extensions and makes sure it&#39;s only available if the user can write back to the file.</p>
 <p>It doesn&#39;t specify quantity of files, so it&#39;s only available if a single file is selected.</p>

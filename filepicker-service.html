@@ -20,8 +20,8 @@
         <div class="nav">
             <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
         </div>
-        <article class="markdown-body"><h1 id="integrate-via-file-picker-as-a-service-[beta]"><a class="header-link" href="#integrate-via-file-picker-as-a-service-[beta]"></a>Integrate via File Picker as a Service [BETA]</h1>
-<h2 id="what-does-it-mean-it's-beta?"><a class="header-link" href="#what-does-it-mean-it's-beta?"></a>What does it mean it&#39;s BETA?</h2>
+        <article class="markdown-body"><h1 id="integrate-via-file-picker-as-a-service-beta"><a class="header-link" href="#integrate-via-file-picker-as-a-service-beta"></a>Integrate via File Picker as a Service [BETA]</h1>
+<h2 id="what-does-it-mean-its-beta"><a class="header-link" href="#what-does-it-mean-its-beta"></a>What does it mean it&#39;s BETA?</h2>
 <p>There will be no more breaking changes in the API, we will only add features.</p>
 <p>The single thing you&#39;ll need to do because of beta is update the script you&#39;re embedding in your app some time near the end of Beta period. Your code won&#39;t have to change.</p>
 <h2 id="introduction"><a class="header-link" href="#introduction"></a>Introduction</h2>
@@ -29,7 +29,7 @@
 <p>Integrating with Egnyte Connect using File Picker Service is just a few minutes of development work!</p>
 </blockquote>
 <p>If you&#39;re after a simple integration that allows the user to choose a file from Egnyte and perform a simple action like sharing a link to that file.</p>
-<h3 id="use-this-recipe-if-you:"><a class="header-link" href="#use-this-recipe-if-you:"></a>Use this recipe if you:</h3>
+<h3 id="use-this-recipe-if-you"><a class="header-link" href="#use-this-recipe-if-you"></a>Use this recipe if you:</h3>
 <ul class="list">
 <li>want to let your users post links to files in your apps&#39; content</li>
 <li>don&#39;t need full control over the file picking experience</li>
@@ -52,29 +52,29 @@
 <li>The integration is done, continue waiting for the tea/coffee to cool down so you can begin drinking it.</li>
 </ol>
 <p>Still too much? Copy this code and fill in the 2 gaps to get a working integration.</p>
-<pre class="hljs"><code>&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"pickerWrapper"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+<pre class="hljs"><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;pickerWrapper&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
 
-&lt;<span class="hljs-keyword">script</span> src=<span class="hljs-string">"https://us-partner-integrations.egnyte.com/services/pick/popup.js"</span>&gt;&lt;/<span class="hljs-keyword">script</span>&gt;
-&lt;<span class="hljs-keyword">script</span>&gt;
-EgnyteService.openPicker({
-    key: <span class="hljs-string">"FILL_IN_API_KEY"</span>,
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://us-partner-integrations.egnyte.com/services/pick/popup.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+EgnyteService.openPicker(</span><span class="xquery">{
+   <span class="hljs-built_in"> key</span>: <span class="hljs-string">&quot;FILL_IN_API_KEY&quot;</span>,
     feature: {
-        action: <span class="hljs-string">"createLink"</span>
-    },
-    targetNode: document.querySelector(<span class="hljs-string">"#pickerWrapper"</span>),
-    success: function (<span class="hljs-literal">result</span>) {
-        <span class="hljs-string">"data"</span>: {
-        url: <span class="hljs-string">"&lt;share link&gt;"</span>,
-        <span class="hljs-built_in">name</span>: <span class="hljs-string">"&lt;name of file / folder&gt;"</span>
-    }
-        var egnyteLink = '&lt;a href=<span class="hljs-string">"'+ result.data.url +'"</span>'&gt;'+ <span class="hljs-literal">result</span>.data.<span class="hljs-built_in">name</span> +'&lt;/a&gt;';
+        action: <span class="hljs-string">&quot;createLink&quot;</span>
+    }</span><span class="xml"><span class="javascript">,
+    <span class="hljs-attr">targetNode</span>: <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#pickerWrapper&quot;</span>),
+    <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) </span></span></span><span class="xquery">{
+        <span class="hljs-string">&quot;data&quot;</span>: {
+        url: <span class="hljs-string">&quot;&lt;share link&gt;&quot;</span>,
+       <span class="hljs-built_in"> name</span>: <span class="hljs-string">&quot;&lt;name of file / folder&gt;&quot;</span>
+    }</span><span class="xml"><span class="javascript">
+        <span class="hljs-keyword">var</span> egnyteLink = <span class="hljs-string">&#x27;</span></span></span><span class="xml"><span class="handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#x27;+ result.data.url +&#x27;&quot;</span>&#x27;&gt;</span>&#x27;+ result.data.name +&#x27;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span></span></span><span class="xml">&#x27;;
         FILL_IN_CODE_TO_PUT_THE_LINK_IN_CONTENT
     },
-    <span class="hljs-keyword">error</span>: function (err) {
-        console.<span class="hljs-built_in">log</span>(err)
-    }
+    error: function (err) </span><span class="xquery">{
+        console.log(err)
+    }</span><span class="xml">
 })
-&lt;/<span class="hljs-keyword">script</span>&gt;</code></pre>        </article>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></code></pre>        </article>
         <div class="nav">
             <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
             <a href="#top"> &#11192; Back to top</a>

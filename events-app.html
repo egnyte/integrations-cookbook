@@ -23,7 +23,7 @@
         <article class="markdown-body"><h1 id="reactive-integration-with-events-api"><a class="header-link" href="#reactive-integration-with-events-api"></a>Reactive integration with Events API</h1>
 <h2 id="introduction"><a class="header-link" href="#introduction"></a>Introduction</h2>
 <p>Egnyte Connect stores the files, while the ecosystem of apps and integrations lets users manipulate the files in more ways than a single platform could. Some integrations will need to know when a file got updated or when folder contents change.</p>
-<h3 id="use-this-recipe-if-you:"><a class="header-link" href="#use-this-recipe-if-you:"></a>Use this recipe if you:</h3>
+<h3 id="use-this-recipe-if-you"><a class="header-link" href="#use-this-recipe-if-you"></a>Use this recipe if you:</h3>
 <ul class="list">
 <li>want to map some structures inside your product to specific folders in Egnyte and keep the functionality up to date for new files showing up</li>
 <li>want to detect new files/versions being uploaded to scan them or perform various kinds of automation</li>
@@ -52,18 +52,20 @@
 <ol class="list">
 <li>Implement Auth - use the Enhanced Auth Service to receive OAuth2 code and exchange it for a token.</li>
 <li>Decide if you want to use one &quot;Admin&quot; token for all interactions or let every user get authenticated separately. We suggest you do your best to choose the latter - API request limits are per-user. If you go with admin-only configuration <a href="./contact.html">get in touch</a> to figure out what quota limits you&#39;ll be working with.</li>
-<li>Get events<ul class="list">
+<li>Get events</li>
+</ol>
+<ul class="list">
 <li>Use an SDK if available to handle querying for events if you don&#39;t have specific needs for unusual queries.</li>
 <li>Make requests to the API directly for full control over when and how you&#39;re getting events</li>
 </ul>
-</li>
+<ol class="list">
 <li>Use Storage API for handling files.</li>
 <li>Implement resetting your recent event id when you get a 404 for it (see below)</li>
 <li>Bake your integration and send it for certification.</li>
 </ol>
 <h3 id="event-types"><a class="header-link" href="#event-types"></a>Event types</h3>
 <p>Events API returns events from file system only. You can detect file and folder operations and adding comments to files, but you won&#39;t detect users or settings modifications.</p>
-<h3 id="resetting-last-event-id-(cursor)"><a class="header-link" href="#resetting-last-event-id-(cursor)"></a>Resetting last event id (cursor)</h3>
+<h3 id="resetting-last-event-id-cursor"><a class="header-link" href="#resetting-last-event-id-cursor"></a>Resetting last event id (cursor)</h3>
 <p>If you&#39;re polling the events API based on last known event id, effectively saying &quot;give me all events that happened after <code>id</code>&quot; it&#39;s possible that there were 300K events outside of the folder you&#39;re watching while you didn&#39;t get a single one, or there may not be an event in your watched folder for a month. In that case, the request will start failing as soon as the event with your saved <code>id</code> doesn&#39;t exist anymore.</p>
 <p>Your reaction should be to query the <code>/cursor</code> endpoint and make a new request with <code>oldest_event_id</code> as your last known event.</p>
 <h3 id="tips"><a class="header-link" href="#tips"></a>Tips</h3>

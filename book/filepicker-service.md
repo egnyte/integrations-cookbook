@@ -1,63 +1,111 @@
-# Integrate via File Picker as a Service [BETA]
-
-## What does it mean it's BETA?
-
-There will be no more breaking changes in the API, we will only add features.
-
-The single thing you'll need to do because of beta is update the script you're embedding in your app some time near the end of Beta period. Your code won't have to change.
+# Integrate via File Picker as a Service [File Picker]
 
 ## Introduction
 
-> Integrating with Egnyte Connect using File Picker Service is just a few minutes of development work!
+> Integrating with Egnyte Connect using File Picker requires just a few minutes of development work!
 
-If you're after a simple integration that allows the user to choose a file from Egnyte and perform a simple action like sharing a link to that file.
-
+If you're seeking a simple integration that allows the user to choose a file from Egnyte and perform a straightforward action like sharing a link to that file, this is for you.
 
 ### Use this recipe if you:
-- want to let your users post links to files in your apps' content
-- don't need full control over the file picking experience
-- want to avoid implementing authorization through OAuth
+
+- Want to let your users post direct links or get file info in your app's context
+- Don't need full control over the file picking experience
+- Want to avoid implementing authorization through OAuth
 
 ## Ingredients
 
 - Two tablespoons of understanding: [Egnyte-specific terms](definitions.md)
-- API Key and **Beta registration**
-- [File Picker Service documentation](https://github.com/egnyte/for-integrators/blob/master/doc/FPaaS.md)
+- API Key and **FilePicker registration**
 
 ## Steps
 
 1. Get an API key at [developers.egnyte.com](https://developers.egnyte.com)
-1. [Get in touch](contact.md) to join the Beta program, we'll register your key and your app's web address
-1. Get some hot tea or coffee
-1. Attach the File Picker Service script to your web app
-1. Call one function from the script with options from the documentation
-1. Handle the response with a callback
-1. The integration is done, continue waiting for the tea/coffee to cool down so you can begin drinking it.
+2. [Get in touch](contact.md) to join the File Picker program. We'll register your key and your app's web address
+3. Prepare some hot tea or coffee
+4. Attach the File Picker Service script to your web app
+5. Call one function from the script with options from the documentation
+6. Handle the response with a callback
+7. The integration is done, continue waiting for the tea/coffee to cool down so you can begin drinking it.
 
-Still too much? Copy this code and fill in the 2 gaps to get a working integration.
+Still too much? Copy this code and fill in the two gaps to get a working integration for testing.
 
 ```hmtl
-<div id="pickerWrapper"></div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Egnyte Filepicker</title>
+  </head>
+  <body>
+    <div>
+      <label for="clientId">Client ID</label><br />
+      <input style="width: 600px" type="text" placeholder="Your registered app ID" id="clientId" />
+    </div>
+    <div>
+      <label for="domain">Egnyte Domain</label><br />
+      <input style="width: 600px" type="text" placeholder="Your domain in name.egnyte.com format" id="domain" />
+    </div>
+    <hr />
+    <div>
+      <textarea style="width: 600px; height: 300px" id="result">My files:</textarea>
+    </div>
+    <div>
+      <button id="btn" type="button">Open Filepicker</button>
+    </div>
+    <script>
+      const host = 'https://us-partner-integrations.egnyte.com';
+      let pickerWindow;
+      const textArea = document.getElementById('result');
+      document.getElementById('btn').addEventListener('click', openFilePicker);
 
-<script src="https://us-partner-integrations.egnyte.com/services/pick/popup.js"></script>
-<script>
-EgnyteService.openPicker({
-    key: "FILL_IN_API_KEY",
-    feature: {
-        action: "createLink"
-    },
-    targetNode: document.querySelector("#pickerWrapper"),
-    success: function (result) {
-        "data": {
-        url: "<share link>",
-        name: "<name of file / folder>"
-    }
-        var egnyteLink = '<a href="'+ result.data.url +'"'>'+ result.data.name +'</a>';
-        FILL_IN_CODE_TO_PUT_THE_LINK_IN_CONTENT
-    },
-    error: function (err) {
-        console.log(err)
-    }
-})
-</script>
+      function messageListener(event) {
+        if (event.origin !== host) {
+          console.warn('event.origin !== host', event.origin, host);
+          return;
+        }
+        switch (event.data.status) {
+          case 'ready':
+            console.log('Filepicker ready');
+            break;
+          case 'success':
+            console.log(event.data);
+            const toDisplay = event.data.payload
+              .map(({ item }) => `name: ${item.name}\nlink: ${item.directLink}`)
+              .join('\n\n');
+            textArea.value = (textArea.value ? `${textArea.value}\n\n` : textArea.value) + toDisplay;
+            pickerWindow.close();
+            break;
+          case 'error':
+            console.error(event.data);
+            break;
+          default:
+            console.warn('Unknown message status:', event.data.status);
+        }
+      }
+
+      function isChildClosedListener() {
+        const intervalId = setInterval(() => {
+          if (pickerWindow.closed) {
+            console.log('Filepicker closed');
+            window.removeEventListener('message', messageListener);
+            clearInterval(intervalId);
+          }
+        }, 100);
+      }
+
+      async function openFilePicker() {
+        const config = {
+          clientId: document.getElementById('clientId').value,
+          domain: document.getElementById('domain').value,
+          openerOrigin: window.location.origin,
+        };
+        const initParams = new URLSearchParams(config).toString();
+        const pickerUrl = `${host}/filepicker?${initParams}`;
+        pickerWindow = window.open(pickerUrl, 'EgnyteFilepicker');
+        isChildClosedListener();
+        window.addEventListener('message', messageListener);
+      }
+    </script>
+  </body>
+</html>
 ```

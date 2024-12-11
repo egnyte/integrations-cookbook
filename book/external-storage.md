@@ -23,7 +23,6 @@ Customers appreciate these integrations because they help them use multiple tool
   - create file version
   - upload file
   - lock (optional)
-- [JS SDK Filepicker](https://github.com/egnyte/egnyte-js-sdk/blob/master/src/docs/widgets.md) (optional)
 - Your back-end language specific SDK (optional)
 
 ## Steps
@@ -35,10 +34,9 @@ It always turns out to be much more complicated than initially estimated. And so
 Instead, we recommend you write a thin abstraction layer on top of File System API so that it's compatible with your current storage handling code. Then it can be put in place of any other storage your product is using.
 
 1. Implement Auth - use the Enhanced Auth Service to receive OAuth2 code and exchange it for a token.
-1. Decide if you want to use one "Admin" token for all interactions or let every user get authenticated separately. We suggest you do your best to choose the latter - API request limits are per-user.
-1. Use File System API for handling files.
-1. Storing location options:
-  - Use JS SDK Filepicker to get user's choice of file id
+2. Decide if you want to use one "Admin" token for all interactions or let every user get authenticated separately. We suggest you do your best to choose the latter - API request limits are per-user.
+3. Use File System API for handling files.
+4. Storing location options:
   - Implement your own file chooser
   - Use a single (user-defined) path for all files and use convention for file and folder names - eg. based on project names or discussion titles in your product.
-1. Bake your integration and send it for certification.
+5. Bake your integration and send it for certification.

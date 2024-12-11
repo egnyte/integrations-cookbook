@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Integrate via File Picker as a Service [BETA]</title>
+    <title>Integrate via File Picker as a Service [File Picker]</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
     <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
 </head>
 
-<body data-title="Integrate via File Picker as a Service [BETA]">
+<body data-title="Integrate via File Picker as a Service [File Picker]">
     <div class="wrapper">
         <div class="egnyte-branding">
             <div class="nav">
@@ -20,61 +20,112 @@
         <div class="nav">
             <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
         </div>
-        <article class="markdown-body"><h1 id="integrate-via-file-picker-as-a-service-beta"><a class="header-link" href="#integrate-via-file-picker-as-a-service-beta"></a>Integrate via File Picker as a Service [BETA]</h1>
-<h2 id="what-does-it-mean-its-beta"><a class="header-link" href="#what-does-it-mean-its-beta"></a>What does it mean it&#39;s BETA?</h2>
-<p>There will be no more breaking changes in the API, we will only add features.</p>
-<p>The single thing you&#39;ll need to do because of beta is update the script you&#39;re embedding in your app some time near the end of Beta period. Your code won&#39;t have to change.</p>
+        <article class="markdown-body"><h1 id="integrate-via-file-picker-as-a-service-file-picker"><a class="header-link" href="#integrate-via-file-picker-as-a-service-file-picker"></a>Integrate via File Picker as a Service [File Picker]</h1>
 <h2 id="introduction"><a class="header-link" href="#introduction"></a>Introduction</h2>
 <blockquote>
-<p>Integrating with Egnyte Connect using File Picker Service is just a few minutes of development work!</p>
+<p>Integrating with Egnyte Connect using File Picker requires just a few minutes of development work!</p>
 </blockquote>
-<p>If you&#39;re after a simple integration that allows the user to choose a file from Egnyte and perform a simple action like sharing a link to that file.</p>
+<p>If you&#39;re seeking a simple integration that allows the user to choose a file from Egnyte and perform a straightforward action like sharing a link to that file, this is for you.</p>
 <h3 id="use-this-recipe-if-you"><a class="header-link" href="#use-this-recipe-if-you"></a>Use this recipe if you:</h3>
 <ul class="list">
-<li>want to let your users post links to files in your apps&#39; content</li>
-<li>don&#39;t need full control over the file picking experience</li>
-<li>want to avoid implementing authorization through OAuth</li>
+<li>Want to let your users post direct links or get file info in your app&#39;s context</li>
+<li>Don&#39;t need full control over the file picking experience</li>
+<li>Want to avoid implementing authorization through OAuth</li>
 </ul>
 <h2 id="ingredients"><a class="header-link" href="#ingredients"></a>Ingredients</h2>
 <ul class="list">
 <li>Two tablespoons of understanding: <a href="./definitions.html">Egnyte-specific terms</a></li>
-<li>API Key and <strong>Beta registration</strong></li>
-<li><a href="https://github.com/egnyte/for-integrators/blob/master/doc/FPaaS.md">File Picker Service documentation</a></li>
+<li>API Key and <strong>FilePicker registration</strong></li>
 </ul>
 <h2 id="steps"><a class="header-link" href="#steps"></a>Steps</h2>
 <ol class="list">
 <li>Get an API key at <a href="https://developers.egnyte.com">developers.egnyte.com</a></li>
-<li><a href="./contact.html">Get in touch</a> to join the Beta program, we&#39;ll register your key and your app&#39;s web address</li>
-<li>Get some hot tea or coffee</li>
+<li><a href="./contact.html">Get in touch</a> to join the File Picker program. We&#39;ll register your key and your app&#39;s web address</li>
+<li>Prepare some hot tea or coffee</li>
 <li>Attach the File Picker Service script to your web app</li>
 <li>Call one function from the script with options from the documentation</li>
 <li>Handle the response with a callback</li>
 <li>The integration is done, continue waiting for the tea/coffee to cool down so you can begin drinking it.</li>
 </ol>
-<p>Still too much? Copy this code and fill in the 2 gaps to get a working integration.</p>
-<pre class="hljs"><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;pickerWrapper&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<p>Still too much? Copy this code and fill in the two gaps to get a working integration for testing.</p>
+<pre class="hljs"><code><span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Egnyte Filepicker<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;clientId&quot;</span>&gt;</span>Client ID<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 600px&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Your registered app ID&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clientId&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;domain&quot;</span>&gt;</span>Egnyte Domain<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 600px&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Your domain in name.egnyte.com format&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;domain&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 600px; height: 300px&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;result&quot;</span>&gt;</span>My files:<span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Open Filepicker<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+      <span class="hljs-keyword">const</span> host = <span class="hljs-string">&#x27;https://us-partner-integrations.egnyte.com&#x27;</span>;
+      <span class="hljs-keyword">let</span> pickerWindow;
+      <span class="hljs-keyword">const</span> textArea = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;result&#x27;</span>);
+      <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;btn&#x27;</span>).addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, openFilePicker);
 
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://us-partner-integrations.egnyte.com/services/pick/popup.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
-EgnyteService.openPicker(</span><span class="xquery">{
-   <span class="hljs-built_in"> key</span>: <span class="hljs-string">&quot;FILL_IN_API_KEY&quot;</span>,
-    feature: {
-        action: <span class="hljs-string">&quot;createLink&quot;</span>
-    }</span><span class="xml"><span class="javascript">,
-    <span class="hljs-attr">targetNode</span>: <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#pickerWrapper&quot;</span>),
-    <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) </span></span></span><span class="xquery">{
-        <span class="hljs-string">&quot;data&quot;</span>: {
-        url: <span class="hljs-string">&quot;&lt;share link&gt;&quot;</span>,
-       <span class="hljs-built_in"> name</span>: <span class="hljs-string">&quot;&lt;name of file / folder&gt;&quot;</span>
-    }</span><span class="xml"><span class="javascript">
-        <span class="hljs-keyword">var</span> egnyteLink = <span class="hljs-string">&#x27;</span></span></span><span class="xml"><span class="handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#x27;+ result.data.url +&#x27;&quot;</span>&#x27;&gt;</span>&#x27;+ result.data.name +&#x27;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span></span></span><span class="xml">&#x27;;
-        FILL_IN_CODE_TO_PUT_THE_LINK_IN_CONTENT
-    },
-    error: function (err) </span><span class="xquery">{
-        console.log(err)
-    }</span><span class="xml">
-})
-<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></code></pre>        </article>
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">messageListener</span>(<span class="hljs-params">event</span>) </span>{
+        <span class="hljs-keyword">if</span> (event.origin !== host) {
+          <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&#x27;event.origin !== host&#x27;</span>, event.origin, host);
+          <span class="hljs-keyword">return</span>;
+        }
+        <span class="hljs-keyword">switch</span> (event.data.status) {
+          <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;ready&#x27;</span>:
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Filepicker ready&#x27;</span>);
+            <span class="hljs-keyword">break</span>;
+          <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;success&#x27;</span>:
+            <span class="hljs-built_in">console</span>.log(event.data);
+            <span class="hljs-keyword">const</span> toDisplay = event.data.payload
+              .map(<span class="hljs-function">(<span class="hljs-params">{ item }</span>) =&gt;</span> <span class="hljs-string">`name: <span class="hljs-subst">${item.name}</span>\nlink: <span class="hljs-subst">${item.directLink}</span>`</span>)
+              .join(<span class="hljs-string">&#x27;\n\n&#x27;</span>);
+            textArea.value = (textArea.value ? <span class="hljs-string">`<span class="hljs-subst">${textArea.value}</span>\n\n`</span> : textArea.value) + toDisplay;
+            pickerWindow.close();
+            <span class="hljs-keyword">break</span>;
+          <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;error&#x27;</span>:
+            <span class="hljs-built_in">console</span>.error(event.data);
+            <span class="hljs-keyword">break</span>;
+          <span class="hljs-keyword">default</span>:
+            <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&#x27;Unknown message status:&#x27;</span>, event.data.status);
+        }
+      }
+
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isChildClosedListener</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">const</span> intervalId = <span class="hljs-built_in">setInterval</span>(<span class="hljs-function">() =&gt;</span> {
+          <span class="hljs-keyword">if</span> (pickerWindow.closed) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Filepicker closed&#x27;</span>);
+            <span class="hljs-built_in">window</span>.removeEventListener(<span class="hljs-string">&#x27;message&#x27;</span>, messageListener);
+            <span class="hljs-built_in">clearInterval</span>(intervalId);
+          }
+        }, <span class="hljs-number">100</span>);
+      }
+
+      <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">openFilePicker</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">const</span> config = {
+          <span class="hljs-attr">clientId</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;clientId&#x27;</span>).value,
+          <span class="hljs-attr">domain</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;domain&#x27;</span>).value,
+          <span class="hljs-attr">openerOrigin</span>: <span class="hljs-built_in">window</span>.location.origin,
+        };
+        <span class="hljs-keyword">const</span> initParams = <span class="hljs-keyword">new</span> URLSearchParams(config).toString();
+        <span class="hljs-keyword">const</span> pickerUrl = <span class="hljs-string">`<span class="hljs-subst">${host}</span>/filepicker?<span class="hljs-subst">${initParams}</span>`</span>;
+        pickerWindow = <span class="hljs-built_in">window</span>.open(pickerUrl, <span class="hljs-string">&#x27;EgnyteFilepicker&#x27;</span>);
+        isChildClosedListener();
+        <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&#x27;message&#x27;</span>, messageListener);
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>        </article>
         <div class="nav">
             <a href="index.html" class="back-to-main">&#11188; Back to Table of Contents</a>
             <a href="#top"> &#11192; Back to top</a>

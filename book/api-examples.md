@@ -17,7 +17,7 @@ Or if you prefer video:
 ## Getting Started
 1. Get collection and environment
 	* With a click of a button: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b860a9fb1916db9a7054#?env%5BEgnyte%20API%20Examples%20Environment%5D=W3siZW5hYmxlZCI6dHJ1ZSwia2V5IjoiYXV0aG9yaXphdGlvbiIsInZhbHVlIjoiQmVhcmVyIHdjYjJodm13ZmQ5NnJnY2NoanBoa3BuNiIsInR5cGUiOiJ0ZXh0In0seyJlbmFibGVkIjp0cnVlLCJrZXkiOiJjbGllbnRfaWQiLCJ2YWx1ZSI6Im04bWVid3p0eHZ2NDJucjV3a3p1dnk0dyIsInR5cGUiOiJ0ZXh0In0seyJlbmFibGVkIjp0cnVlLCJrZXkiOiJjbGllbnRfc2VjcmV0IiwidmFsdWUiOiIzc3FrNTY5cEhXOE1DNWpWVzRmNHRCVTY1RU10WDRud000bURZTWdYSHhWZXJNQ1JYUSIsInR5cGUiOiJ0ZXh0In0seyJlbmFibGVkIjp0cnVlLCJrZXkiOiJkb21haW5fbmFtZSIsInZhbHVlIjoiYXBpZGVtby5lZ255dGUuY29tIiwidHlwZSI6InRleHQifV0=)
-	* or [Download collection](https://egnyte.egnyte.com/dl/JR2P8Ly1jj) and [Download environment](https://egnyte.egnyte.com/dl/PWTOhbLIVz) and import them.
+	* or [Download collection](https://egnyte.egnyte.com/dl/zHMFJ00SDV) and [Download environment](https://egnyte.egnyte.com/dl/8GWP993mFW3B) and import them.
 1. Set active environment
 	* It should be **imported with 'Run in Postman' button** ![Screenshot](./assets/active-environment.png)
 	* Download from **link above**
